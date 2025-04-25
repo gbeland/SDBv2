@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?define SDB_TargetDir=$(var.SDB.TargetDir)?>
+	<?define SDB_ReqFilesDir="$(var.SDB.ProjectDir)Required Files\"?>
+	<?define ResourcesDir = $(sys.CURRENTDIR)Images?>
+  
+	<Product
+		Manufacturer="Prismview"
+		Name="SDB"
+		Language="1033"
+		Version="1.10.0.20"
+		Id="*"
+		UpgradeCode="FE292C9F-5134-4D86-9FE5-6F48FB84EE03">
+		<!-- DO NOT CHANGE UPGRADECODE! -->
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<!-- USER MUST HAVE ADMIN RIGHTS-->
+		<Condition Message="You need to be an administrator to install this product.">
+			Privileged
+		</Condition>
+
+		<!-- Set the icon to be used in "Programs and Features" -->
+		<Icon Id="AppIcon" SourceFile="$(var.SDB.ProjectDir)sdb.ico"/>
+		<Property Id="ARPPRODUCTICON" Value="AppIcon"/>
+
+		<!-- Mandatory main product feature -->
+		<Feature Id="ProductFeature" Title="SDB" Level="1">
+			<ComponentGroupRef Id="RequiredFilesFolder_files" />
+			<ComponentGroupRef Id="ProgramFilesFolder_files" />
+			<ComponentRef Id="ApplicationShortcut" />
+		</Feature>
+
+		<!-- Select the UI for the installer -->
+		<UI Id="UserInterface">
+			<Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+			<Property Id="WixUI_Mode" Value="Custom" />
+
+			<TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+			<TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="9" Bold="yes" />
+			<TextStyle Id="WixUI_Font_Title"  FaceName="Tahoma" Size="9" Bold="yes" />
+
+			<Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+
+			<DialogRef Id="ProgressDlg" />
+			<DialogRef Id="ErrorDlg" />
+			<DialogRef Id="FilesInUse" />
+			<DialogRef Id="FatalError" />
+			<DialogRef Id="UserExit" />
+
+			<Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+			<Publish Dialog="WelcomeDlg" Control="Next" Event="EndDialog" Value="Return" Order="2"></Publish>
+
+		</UI>
+		<UIRef Id="WixUI_Common" />
+		<WixVariable Id="WixUIDialogBmp" Value="$(var.ResourcesDir)\welcome_banner.bmp" />
+		<WixVariable Id="WixUIBannerBmp" Value="$(var.ResourcesDir)\install_banner.bmp" />
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="MANUFACTURERFOLDER" Name="!(bind.property.Manufacturer)">
+					<Directory Id="INSTALLFOLDER" Name="!(bind.property.ProductName)">
+						<Directory Id="REQFILESFOLDER" Name="Required Files"/>
+					</Directory>
+				</Directory>
+			</Directory>
+			<Directory Id="ProgramMenuFolder">
+				<Directory Id="ApplicationProgramsFolder" Name="!(bind.property.Manufacturer)" />
+			</Directory>
+		</Directory>
+
+		<DirectoryRef Id="ApplicationProgramsFolder">
+			<Component Id="ApplicationShortcut" Guid="08956097-EEE0-4148-B4D2-2CC066475C3E">
+				<Shortcut Id="ApplicationStartMenuShortcut"
+						  Name="!(bind.property.ProductName)"
+						  Description="Service Database"
+						  Target="[#SDB.exe]"
+						  WorkingDirectory="INSTALLFOLDER"/>
+				<RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+				<RegistryValue Root="HKCU" Key="Software\!(bind.property.Manufacturer)\!(bind.property.ProductName)" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+			</Component>
+		</DirectoryRef>
+	</Product>
+
+	<Fragment>
+		<ComponentGroup Id="ProgramFilesFolder_files" Directory="INSTALLFOLDER">
+			<Component Id="SDB.exe" Guid="85374101-37ff-4223-979d-dcf6cd6e25d0">
+				<File Id="SDB.exe" Name="SDB.exe" Source="$(var.SDB_TargetDir)SDB.exe" />
+			</Component>
+
+			<!--Required DLL-->
+			<Component Id="itextsharp.dll" Guid="5ac9776b-8d15-40b9-9a59-edf74aa66c96">
+				<File Id="itextsharp.dll" Name="itextsharp.dll" Source="$(var.SDB_ReqFilesDir)itextsharp.dll" />
+			</Component>
+			<Component Id="ListViewPrinter.dll" Guid="c6de1cbf-e419-4f81-8436-37cb8b9b94d9">
+				<File Id="ListViewPrinter.dll" Name="ListViewPrinter.dll" Source="$(var.SDB_ReqFilesDir)ListViewPrinter.dll" />
+			</Component>
+			<Component Id="MySql.Data.dll" Guid="7363a42f-9d8e-4b94-b676-e972b13064e5">
+				<File Id="MySql.Data.dll" Name="MySql.Data.dll" Source="$(var.SDB_ReqFilesDir)MySql.Data.dll" />
+			</Component>
+			<Component Id="ObjectListView.dll" Guid="a0b3f00f-223b-479e-8e45-da7014d4cdbb">
+				<File Id="ObjectListView.dll" Name="ObjectListView.dll" Source="$(var.SDB_ReqFilesDir)ObjectListView.dll" />
+			</Component>
+			<Component Id="Seagull.BarTender.Print.dll" Guid="7b4e1a4d-bcd9-44c8-b334-c12e80e5bba6">
+				<File Id="Seagull.BarTender.Print.dll" Name="Seagull.BarTender.Print.dll" Source="$(var.SDB_ReqFilesDir)Seagull.BarTender.Print.dll" />
+			</Component>
+			<Component Id="ZedGraph.dll" Guid="7701632f-f019-4e12-bef5-07b65c68ccf5">
+				<File Id="ZedGraph.dll" Name="ZedGraph.dll" Source="$(var.SDB_ReqFilesDir)ZedGraph.dll" />
+			</Component>
+			<Component Id="BtSystem.Client.dll" Guid="c5a0feef-763d-4613-ae7a-998a95e3c6ac">
+				<File Id="BtSystem.Client.dll" Name="BtSystem.Client.dll" Source="$(var.SDB_ReqFilesDir)BtSystem.Client.dll" />
+			</Component>
+			<Component Id="BtSystem.Client.Reader.dll" Guid="d88d066f-7a68-41ee-b72a-a16d35bdc4ca">
+				<File Id="BtSystem.Client.Reader.dll" Name="BtSystem.Client.Reader.dll" Source="$(var.SDB_ReqFilesDir)BtSystem.Client.Reader.dll" />
+			</Component>
+			<Component Id="BtSystem.Interfaces.dll" Guid="a0677cf6-2dfb-4ebb-b888-75733839086b">
+				<File Id="BtSystem.Interfaces.dll" Name="BtSystem.Interfaces.dll" Source="$(var.SDB_ReqFilesDir)BtSystem.Interfaces.dll" />
+			</Component>
+			<Component Id="BtSystem.Network.dll" Guid="50cd2629-14ed-4a53-8365-c29a89f6efab">
+				<File Id="BtSystem.Network.dll" Name="BtSystem.Network.dll" Source="$(var.SDB_ReqFilesDir)BtSystem.Network.dll" />
+			</Component>
+			<Component Id="BtSystem.Reprint.Support.dll" Guid="9504f59c-61dd-4f43-bd60-0fc577e7fd8a">
+				<File Id="BtSystem.Reprint.Support.dll" Name="BtSystem.Reprint.Support.dll" Source="$(var.SDB_ReqFilesDir)BtSystem.Reprint.Support.dll" />
+			</Component>
+			<Component Id="BtSystem.Strings.dll" Guid="6f76edbd-022a-4be3-bc17-87945072306e">
+				<File Id="BtSystem.Strings.dll" Name="BtSystem.Strings.dll" Source="$(var.SDB_ReqFilesDir)BtSystem.Strings.dll" />
+			</Component>
+			<Component Id="BtSystem.Support.dll" Guid="268d460f-5929-4635-bf1c-bbd30ddc9500">
+				<File Id="BtSystem.Support.dll" Name="BtSystem.Support.dll" Source="$(var.SDB_ReqFilesDir)BtSystem.Support.dll" />
+			</Component>
+			<Component Id="BtSystem.UI.dll" Guid="23a3ec56-e710-40fd-903a-59c34c076c0f">
+				<File Id="BtSystem.UI.dll" Name="BtSystem.UI.dll" Source="$(var.SDB_ReqFilesDir)BtSystem.UI.dll" />
+			</Component>
+			<Component Id="DevExpress.Data.v11.1.dll" Guid="b25b18de-ecdb-4b84-890b-9d1aee67457e">
+				<File Id="DevExpress.Data.v11.1.dll" Name="DevExpress.Data.v11.1.dll" Source="$(var.SDB_ReqFilesDir)DevExpress.Data.v11.1.dll" />
+			</Component>
+			<Component Id="DevExpress.Data.v16.1.dll" Guid="8d7e8d78-2ab9-4a51-b970-a76dc8a78279">
+				<File Id="DevExpress.Data.v16.1.dll" Name="DevExpress.Data.v16.1.dll" Source="$(var.SDB_ReqFilesDir)DevExpress.Data.v16.1.dll" />
+			</Component>
+			<Component Id="DevExpress.Pdf.v16.1.Core.dll" Guid="95b87e39-2e0c-43a7-8575-31740db47801">
+				<File Id="DevExpress.Pdf.v16.1.Core.dll" Name="DevExpress.Pdf.v16.1.Core.dll" Source="$(var.SDB_ReqFilesDir)DevExpress.Pdf.v16.1.Core.dll" />
+			</Component>
+			<Component Id="DevExpress.Printing.v11.1.Core.dll" Guid="8355061f-430f-48f0-83e9-4320eecfb8db">
+				<File Id="DevExpress.Printing.v11.1.Core.dll" Name="DevExpress.Printing.v11.1.Core.dll" Source="$(var.SDB_ReqFilesDir)DevExpress.Printing.v11.1.Core.dll" />
+			</Component>
+			<Component Id="DevExpress.Printing.v16.1.Core.dll" Guid="ecd52d01-968e-4cbc-a561-9eadd9a7d131">
+				<File Id="DevExpress.Printing.v16.1.Core.dll" Name="DevExpress.Printing.v16.1.Core.dll" Source="$(var.SDB_ReqFilesDir)DevExpress.Printing.v16.1.Core.dll" />
+			</Component>
+			<Component Id="DevExpress.Sparkline.v16.1.Core.dll" Guid="dc6b74f2-aabc-4aab-b1c0-4e06ecdec11c">
+				<File Id="DevExpress.Sparkline.v16.1.Core.dll" Name="DevExpress.Sparkline.v16.1.Core.dll" Source="$(var.SDB_ReqFilesDir)DevExpress.Sparkline.v16.1.Core.dll" />
+			</Component>
+			<Component Id="DevExpress.Utils.v11.1.dll" Guid="cb162fc8-4731-46ae-8160-d73be617f37c">
+				<File Id="DevExpress.Utils.v11.1.dll" Name="DevExpress.Utils.v11.1.dll" Source="$(var.SDB_ReqFilesDir)DevExpress.Utils.v11.1.dll" />
+			</Component>
+			<Component Id="DevExpress.Utils.v16.1.dll" Guid="688f4dce-b493-4121-b579-eee5f31a1f9f">
+				<File Id="DevExpress.Utils.v16.1.dll" Name="DevExpress.Utils.v16.1.dll" Source="$(var.SDB_ReqFilesDir)DevExpress.Utils.v16.1.dll" />
+			</Component>
+			<Component Id="DevExpress.Xpo.v11.1.dll" Guid="4733913a-76ca-492a-b3a4-cd0e3ec6b64a">
+				<File Id="DevExpress.Xpo.v11.1.dll" Name="DevExpress.Xpo.v11.1.dll" Source="$(var.SDB_ReqFilesDir)DevExpress.Xpo.v11.1.dll" />
+			</Component>
+			<Component Id="DevExpress.XtraBars.v11.1.dll" Guid="488025b0-33db-4fc0-8794-7a572a26548f">
+				<File Id="DevExpress.XtraBars.v11.1.dll" Name="DevExpress.XtraBars.v11.1.dll" Source="$(var.SDB_ReqFilesDir)DevExpress.XtraBars.v11.1.dll" />
+			</Component>
+			<Component Id="DevExpress.XtraEditors.v11.1.dll" Guid="b8a07d90-5d6d-4a69-b7a8-0295ddb81bf8">
+				<File Id="DevExpress.XtraEditors.v11.1.dll" Name="DevExpress.XtraEditors.v11.1.dll" Source="$(var.SDB_ReqFilesDir)DevExpress.XtraEditors.v11.1.dll" />
+			</Component>
+			<Component Id="DevExpress.XtraEditors.v16.1.dll" Guid="2ef03a7d-cf9d-4ab3-8a97-e980238236cd">
+				<File Id="DevExpress.XtraEditors.v16.1.dll" Name="DevExpress.XtraEditors.v16.1.dll" Source="$(var.SDB_ReqFilesDir)DevExpress.XtraEditors.v16.1.dll" />
+			</Component>
+			<Component Id="DevExpress.XtraGrid.v11.1.dll" Guid="b4768e77-4f5b-4697-b9c8-1668f291a577">
+				<File Id="DevExpress.XtraGrid.v11.1.dll" Name="DevExpress.XtraGrid.v11.1.dll" Source="$(var.SDB_ReqFilesDir)DevExpress.XtraGrid.v11.1.dll" />
+			</Component>
+			<Component Id="DevExpress.XtraLayout.v11.1.dll" Guid="ec9a10aa-ab8d-419c-966c-761d3959233c">
+				<File Id="DevExpress.XtraLayout.v11.1.dll" Name="DevExpress.XtraLayout.v11.1.dll" Source="$(var.SDB_ReqFilesDir)DevExpress.XtraLayout.v11.1.dll" />
+			</Component>
+			<Component Id="DriverAutomationLibrary.dll" Guid="c1b74bac-15ad-47f8-8952-f16d98604f76">
+				<File Id="DriverAutomationLibrary.dll" Name="DriverAutomationLibrary.dll" Source="$(var.SDB_ReqFilesDir)DriverAutomationLibrary.dll" />
+			</Component>
+			<Component Id="Interop.BarTender.dll" Guid="9a467776-3ad2-44e6-ae7a-9d40d0453e85">
+				<File Id="Interop.BarTender.dll" Name="Interop.BarTender.dll" Source="$(var.SDB_ReqFilesDir)Interop.BarTender.dll" />
+			</Component>
+			<Component Id="Interop.DriverAutomationLibrary.dll" Guid="7269e943-7b2b-46ae-b359-82c03ab4642a">
+				<File Id="Interop.DriverAutomationLibrary.dll" Name="Interop.DriverAutomationLibrary.dll" Source="$(var.SDB_ReqFilesDir)Interop.DriverAutomationLibrary.dll" />
+			</Component>
+			<Component Id="Interop.NetFwTypeLib.dll" Guid="d1c148a7-eac0-4a42-bf2c-470a675311a1">
+				<File Id="Interop.NetFwTypeLib.dll" Name="Interop.NetFwTypeLib.dll" Source="$(var.SDB_ReqFilesDir)Interop.NetFwTypeLib.dll" />
+			</Component>
+			<Component Id="Maestro.Interface.dll" Guid="ee9de198-b359-4596-957c-5779a81a8ba1">
+				<File Id="Maestro.Interface.dll" Name="Maestro.Interface.dll" Source="$(var.SDB_ReqFilesDir)Maestro.Interface.dll" />
+			</Component>
+			<Component Id="Maestro.Library.dll" Guid="e2e40922-1bc6-4499-9c61-85a6538b1e16">
+				<File Id="Maestro.Library.dll" Name="Maestro.Library.dll" Source="$(var.SDB_ReqFilesDir)Maestro.Library.dll" />
+			</Component>
+			<Component Id="Seagull.Framework.dll" Guid="4d58915e-b7e5-44f6-a94c-364e799ec7c9">
+				<File Id="Seagull.Framework.dll" Name="Seagull.Framework.dll" Source="$(var.SDB_ReqFilesDir)Seagull.Framework.dll" />
+			</Component>
+			<Component Id="Seagull.Interop.dll" Guid="c2bac315-e11e-4b7a-9747-3e72b286ffb4">
+				<File Id="Seagull.Interop.dll" Name="Seagull.Interop.dll" Source="$(var.SDB_ReqFilesDir)Seagull.Interop.dll" />
+			</Component>
+			<Component Id="Seagull.Librarian.Core.dll" Guid="10a1cc53-0528-456d-986f-58923c4fa065">
+				<File Id="Seagull.Librarian.Core.dll" Name="Seagull.Librarian.Core.dll" Source="$(var.SDB_ReqFilesDir)Seagull.Librarian.Core.dll" />
+			</Component>
+			<Component Id="Seagull.Security.dll" Guid="cb7e1094-ab01-45c4-8fee-39e80043e4d8">
+				<File Id="Seagull.Security.dll" Name="Seagull.Security.dll" Source="$(var.SDB_ReqFilesDir)Seagull.Security.dll" />
+			</Component>
+			<Component Id="Seagull.XpoDataAccess.dll" Guid="e44db42f-f5d1-4f86-a7c6-a6afe58fa6d2">
+				<File Id="Seagull.XpoDataAccess.dll" Name="Seagull.XpoDataAccess.dll" Source="$(var.SDB_ReqFilesDir)Seagull.XpoDataAccess.dll" />
+			</Component>
+      <Component Id="ChangeLog.txt" Guid="57534ce2-a4c3-473e-a26f-647a545e5850">
+				<File Id="ChangeLog.txt" Name="ChangeLog.txt" Source="..\ChangeLog.txt"/>
+			</Component>
+			<Component Id="SDB.exe.config" Guid="6b90f2a7-be13-4409-ae03-1e936c70fcb1">
+				<File Id="SDB.exe.config" Name="SDB.exe.config" Source="$(var.SDB_TargetDir)SDB.exe.config" />
+			</Component>
+      <Component Id="Newtonsoft.Json.dll" Guid="032c92fa-e696-4cb9-a927-9b07f1b73d49">
+        <File Id="Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Source="$(var.SDB_TargetDir)Newtonsoft.Json.dll" />
+      </Component>
+
+		</ComponentGroup>
+		<ComponentGroup Id="RequiredFilesFolder_files" Directory="REQFILESFOLDER">
+			<Component Id="OSA_Checklist.pdf" Guid="692C041C-02C3-4422-B0FF-EC1C8421EF2F">
+				<File Id="OSA_Checklist.pdf" Name="OSA_Checklist.pdf" Source="$(var.SDB_ReqFilesDir)OSA_Checklist.pdf"/>
+			</Component>
+			<Component Id="OSA_Cover.pdf" Guid="0E08DACE-CA52-4CE0-B0E9-5652F5F900FE">
+				<File Id="OSA_Cover.pdf" Name="OSA_Cover.pdf" Source="$(var.SDB_ReqFilesDir)OSA_Cover.pdf"/>
+			</Component>
+      <Component Id="PrismviewLogoLarge.png" Guid="df87f7f4-9cf2-48e5-aa1e-29f7fb1d23d7">
+        <File Id="PrismviewLogoLarge.png" Name="PrismviewLogoLarge.png" Source="$(var.SDB_ReqFilesDir)PrismviewLogoLarge.png"/>
+      </Component>
+			<Component Id="prismview_icon_gs_256x256.png" Guid="0AD65AC0-1411-4A66-BE15-D61B3186BD71">
+				<File Id="prismview_icon_gs_256x256.png" Name="prismview_icon_gs_256x256.png" Source="$(var.SDB_ReqFilesDir)prismview_icon_gs_256x256.png"/>
+			</Component>
+			<Component Id="RMA_Bin_Label.btw" Guid="35007C0B-E5E4-4F20-867E-F531FD24BD86">
+				<File Id="RMA_Bin_Label.btw" Name="RMA Bin Label.btw" Source="$(var.SDB_ReqFilesDir)RMA Bin Label.btw"/>
+			</Component>
+			<Component Id="RMA_Zone_Label.btw" Guid="BEF6B505-DD7E-4A91-B3DB-C263C7EB32AE">
+				<File Id="RMA_Zone_Label.btw" Name="RMA Zone Label.btw" Source="$(var.SDB_ReqFilesDir)RMA Zone Label.btw"/>
+			</Component>
+			<Component Id="template.rtf" Guid="433EF5E2-341C-489E-87C0-899B092CF0C7">
+				<File Id="template.rtf" Name="template.rtf" Source="$(var.SDB_ReqFilesDir)template.rtf"/>
+			</Component>
+      <Component Id="pmc_template.rtf" Guid="b6d7d0d7-059f-4444-a6bd-755b109df537">
+        <File Id="pmc_template.rtf" Name="pmc_template.rtf" Source="$(var.SDB_ReqFilesDir)pmc_template.rtf"/>
+      </Component>
+			<Component Id="SDB_Default_Tracker_State.bin" Guid="57F32CF2-BBA2-4024-844D-C43190F1D1F8">
+				<File Id="SDB_Default_Tracker_State.bin" Name="SDB Default Tracker State.bin" Source="$(var.SDB_ReqFilesDir)SDB Default Tracker State.bin"/>
+			</Component>
+
+		</ComponentGroup>
+	</Fragment>
+</Wix>

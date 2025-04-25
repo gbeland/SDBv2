@@ -1,0 +1,2284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{720893B6-4C7A-47E9-B3A6-EB49478E57D8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SDB</RootNamespace>
+    <AssemblyName>SDB</AssemblyName>
+    <ManifestCertificateThumbprint>9E0E8CC0A6508C29FD59E5376A8284D7FC7CDFEE</ManifestCertificateThumbprint>
+    <ManifestKeyFile>SDB_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>sdb.ico</ApplicationIcon>
+    <StartupObject>SDB.Program</StartupObject>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Documents and Settings\Spencer\My Documents\Visual Studio 2005\Builds\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\lappy\builds\</UpdateUrl>
+    <ProductName>SDB</ProductName>
+    <PublisherName>Prismview LLC</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>24</ApplicationRevision>
+    <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Output\SDB\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Output\SDB\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BtSystem.Client, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\BtSystem.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="BtSystem.Client.Reader, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\BtSystem.Client.Reader.dll</HintPath>
+    </Reference>
+    <Reference Include="BtSystem.Interfaces, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\BtSystem.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="BtSystem.Network, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\BtSystem.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="BtSystem.Reprint.Support, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\BtSystem.Reprint.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="BtSystem.Strings, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\BtSystem.Strings.dll</HintPath>
+    </Reference>
+    <Reference Include="BtSystem.Support, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\BtSystem.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="BtSystem.UI, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\BtSystem.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\DevExpress.Data.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v16.1">
+      <HintPath>Required Files\DevExpress.Data.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v16.1.Core">
+      <HintPath>Required Files\DevExpress.Pdf.v16.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\DevExpress.Printing.v11.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v16.1.Core">
+      <HintPath>Required Files\DevExpress.Printing.v16.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v16.1.Core">
+      <HintPath>Required Files\DevExpress.Sparkline.v16.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\DevExpress.Utils.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v16.1">
+      <HintPath>Required Files\DevExpress.Utils.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v11.1, Version=11.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\DevExpress.Xpo.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v11.1, Version=11.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\DevExpress.XtraBars.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\DevExpress.XtraEditors.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v16.1">
+      <HintPath>Required Files\DevExpress.XtraEditors.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v11.1, Version=11.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\DevExpress.XtraGrid.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v11.1, Version=11.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\DevExpress.XtraLayout.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.BarTender, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Required Files\Interop.BarTender.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.DriverAutomationLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Required Files\Interop.DriverAutomationLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.NetFwTypeLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Required Files\Interop.NetFwTypeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ListViewPrinter, Version=2.5.0.29528, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\ListViewPrinter.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Maestro.Interface, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\Maestro.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Maestro.Library, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\Maestro.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.10.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.10.7\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ObjectListView.Official.2.9.1\lib\net20\ObjectListView.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Seagull.BarTender.Print, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Seagull\BarTender Suite\SDK\Assemblies\Seagull.BarTender.Print.dll</HintPath>
+    </Reference>
+    <Reference Include="Seagull.Framework, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\Seagull.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Seagull.Interop, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\Seagull.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Seagull.Librarian.Core, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\Seagull.Librarian.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Seagull.Security, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\Seagull.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Seagull.XpoDataAccess, Version=10.1.4.1, Culture=neutral, PublicKeyToken=109ff779a1b4cbc7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Required Files\Seagull.XpoDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="ZedGraph, Version=5.1.7.430, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Asset\AssetExtraProperties.cs" />
+    <Compile Include="Classes\Asset\AssetUtil.cs" />
+    <Compile Include="Classes\Asset\ClassCabinetType.cs" />
+    <Compile Include="Classes\Asset\ClassCameraType.cs" />
+    <Compile Include="Classes\Asset\ClassClientConnection.cs" />
+    <Compile Include="Classes\Asset\ClassDocuments.cs" />
+    <Compile Include="Classes\Asset\ClassSystemBackup.cs" />
+    <Compile Include="Classes\Asset\ClassOutputMethod.cs" />
+    <Compile Include="Classes\Admin\ClassAdminEmail.cs" />
+    <Compile Include="Classes\Assembly\ClassAssembly.cs" />
+    <Compile Include="Classes\Assembly\ClassAssemblyCategory.cs" />
+    <Compile Include="Classes\Assembly\ClassAssemblyType.cs" />
+    <Compile Include="Classes\Asset\ClassAsset.cs" />
+    <Compile Include="Classes\Asset\ClassCameraCheck.cs" />
+    <Compile Include="Classes\Asset\ClassBlackoutSchedule.cs" />
+    <Compile Include="Classes\Asset\ClassBlackoutScheduleEntry.cs" />
+    <Compile Include="Classes\Asset\ControllerConnection.cs" />
+    <Compile Include="Classes\Asset\ControllerHardware.cs" />
+    <Compile Include="Classes\Asset\ControllerSoftware.cs" />
+    <Compile Include="Classes\General\JournalTableInfo.cs" />
+    <Compile Include="Classes\RMA\ClassRepair_Actions.cs" />
+    <Compile Include="Classes\User\ClassUserGroup.cs" />
+    <Compile Include="Forms\Asset\FormAsset_ClientConnection_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_ClientConnection_Select.Designer.cs">
+      <DependentUpon>FormAsset_ClientConnection_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\FormCustomerAdvancedEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\FormCustomerAdvancedEmail.Designer.cs">
+      <DependentUpon>FormCustomerAdvancedEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA.Designer.cs">
+      <DependentUpon>FormRMA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormTicketPriority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormTicketPriority.Designer.cs">
+      <DependentUpon>FormTicketPriority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Classes\MagicInfoAddress.cs" />
+    <Compile Include="MagicInfo\Classes\MagicInfoAlertData.cs" />
+    <Compile Include="MagicInfo\Classes\MagicInfoAsset.cs" />
+    <Compile Include="MagicInfo\Classes\MagicInfoContacts.cs" />
+    <Compile Include="MagicInfo\Classes\MagicInfoCustomer.cs" />
+    <Compile Include="MagicInfo\Classes\MagicInfoIssue.cs" />
+    <Compile Include="MagicInfo\Classes\MagicInfoJournal.cs" />
+    <Compile Include="MagicInfo\Classes\MagicInfoJournalEntry.cs" />
+    <Compile Include="MagicInfo\Classes\MagicInfoMarket.cs" />
+    <Compile Include="MagicInfo\Classes\MagicInfoServer.cs" />
+    <Compile Include="MagicInfo\Classes\MagicInfoSolution.cs" />
+    <Compile Include="MagicInfo\Classes\MagicInfoStatus.cs" />
+    <Compile Include="MagicInfo\Classes\MagicInfoTicket.cs" />
+    <Compile Include="Classes\RMA\ClassComponent.cs" />
+    <Compile Include="Classes\Admin\ClassConfig.cs" />
+    <Compile Include="Classes\Customer\ClassCustomer.cs" />
+    <Compile Include="Classes\Customer\ClassCustomerAssetTag.cs" />
+    <Compile Include="Classes\Admin\ClassEmailQueue.cs" />
+    <Compile Include="Classes\Admin\ClassEventLog.cs" />
+    <Compile Include="Classes\Misc\ClassFixedNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\General\ClassGeneralNote.cs" />
+    <Compile Include="Classes\Asset\ClassGeoCode.cs" />
+    <Compile Include="Classes\General\ClassGlobalSettings.cs" />
+    <Compile Include="Classes\RMA\ClassLegacyRMA.cs" />
+    <Compile Include="Classes\General\ClassLogFile.cs" />
+    <Compile Include="Classes\Customer\ClassMarket.cs" />
+    <Compile Include="Classes\Admin\ClassEmailGenerator.cs" />
+    <Compile Include="Classes\RMA\ClassRMA_Assembly.cs" />
+    <Compile Include="Classes\Shipments_Legacy\ClassShipment_Item.cs" />
+    <Compile Include="Classes\Shipments_Legacy\ClassShipment_Legacy.cs" />
+    <Compile Include="Classes\Shipments_Legacy\ClassShipment_Method.cs" />
+    <Compile Include="Classes\Ticket\TicketExtraProperties.cs" />
+    <Compile Include="Classes\Ticket\TicketUtil.cs" />
+    <Compile Include="Classes\User\ClassNotification.cs" />
+    <Compile Include="Classes\General\ClassObjectListViewModelComparer.cs" />
+    <Compile Include="Classes\User\ClassPasswordUtility.cs" />
+    <Compile Include="Classes\Asset\ClassPreventiveMaintenanceAction.cs" />
+    <Compile Include="Classes\Misc\ClassProgressBarCol.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Ticket\ClassRentalCompany.cs" />
+    <Compile Include="Classes\General\ClassReporting.cs" />
+    <Compile Include="Classes\RMA\ClassRMA.cs" />
+    <Compile Include="Classes\RMA\ClassRMA_Area.cs" />
+    <Compile Include="Classes\RMA\ClassRMA_Bin.cs" />
+    <Compile Include="Classes\RMA\ClassRMA_BinHistory.cs" />
+    <Compile Include="Classes\RMA\ClassRMA_Component.cs" />
+    <Compile Include="Classes\RMA\ClassRMA_Reporting.cs" />
+    <Compile Include="Classes\RMA\ClassRMA_FailureType.cs" />
+    <Compile Include="Classes\RMA\ClassRMA_RepairType.cs" />
+    <Compile Include="Classes\RMA\ClassRMA_RootCause.cs" />
+    <Compile Include="Classes\Customer\ClassSalesperson.cs" />
+    <Compile Include="Classes\General\ClassSettings.cs" />
+    <Compile Include="Classes\User\ClassSubscription.cs" />
+    <Compile Include="Classes\Tech\ClassTech.cs" />
+    <Compile Include="Classes\Tech\ClassTech_Status.cs" />
+    <Compile Include="Classes\Ticket\ClassTicket.cs" />
+    <Compile Include="Classes\Ticket\ClassTicket_Hold.cs" />
+    <Compile Include="Classes\Ticket\ClassTicket_Rental.cs" />
+    <Compile Include="Classes\Ticket\ClassTicket_Reporting.cs" />
+    <Compile Include="Classes\Ticket\ClassTicket_Image.cs" />
+    <Compile Include="Classes\General\ClassJournal.cs" />
+    <Compile Include="Classes\General\ClassJournalItem.cs" />
+    <Compile Include="Classes\Ticket\ClassTicket_Solution.cs" />
+    <Compile Include="Classes\Ticket\ClassTicket_Symptom.cs" />
+    <Compile Include="Classes\Ticket\ClassTicket_TechOnSiteEvent.cs" />
+    <Compile Include="Classes\User\ClassUser.cs" />
+    <Compile Include="Classes\General\ClassVariance.cs" />
+    <Compile Include="Classes\Misc\ClassWebDownload.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\General\ClassWorkbenchItem.cs" />
+    <Compile Include="Classes\Asset\ClassLiftType.cs" />
+    <Compile Include="Classes\Ticket\ClassRentalDivision.cs" />
+    <Compile Include="Classes\RMA\ClassRMA_Zone.cs" />
+    <Compile Include="Classes\General\SerializableFont.cs" />
+    <Compile Include="Forms\Admin\FormAdmin_AssemblyCategory_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_AssemblyCategory_AddEdit.Designer.cs">
+      <DependentUpon>FormAdmin_AssemblyCategory_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_AssetTags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_AssetTags.Designer.cs">
+      <DependentUpon>FormAdmin_AssetTags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_AssetTags_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_AssetTags_New.Designer.cs">
+      <DependentUpon>FormAdmin_AssetTags_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Config.Designer.cs">
+      <DependentUpon>FormAdmin_Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Symptom_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Symptom_AddEdit.Designer.cs">
+      <DependentUpon>FormAdmin_Symptom_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Solution_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Solution_Select.Designer.cs">
+      <DependentUpon>FormAdmin_Solution_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Assembly\FormAssemblyCategory_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Assembly\FormAssemblyCategory_Select.Designer.cs">
+      <DependentUpon>FormAssemblyCategory_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_Document_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_Document_New.Designer.cs">
+      <DependentUpon>FormAsset_Document_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_ControllerSoftware_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_ControllerSoftware_Select.Designer.cs">
+      <DependentUpon>FormAsset_ControllerSoftware_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_ControllerConnection_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_ControllerConnection_Select.Designer.cs">
+      <DependentUpon>FormAsset_ControllerConnection_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_ControllerHardware_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_ControllerHardware_Select.Designer.cs">
+      <DependentUpon>FormAsset_ControllerHardware_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CameraCheck\FormCameraCheck_Audit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CameraCheck\FormCameraCheck_Audit.Designer.cs">
+      <DependentUpon>FormCameraCheck_Audit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CameraCheck\FormCameraCheck_Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CameraCheck\FormCameraCheck_Log.Designer.cs">
+      <DependentUpon>FormCameraCheck_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CameraCheck\FormCameraCheck_Review.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CameraCheck\FormCameraCheck_Review.Designer.cs">
+      <DependentUpon>FormCameraCheck_Review.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Symptom_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Symptom_Select.Designer.cs">
+      <DependentUpon>FormAdmin_Symptom_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\FormEmails_AutomatedEmailList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\FormEmails_AutomatedEmailList.Designer.cs">
+      <DependentUpon>FormEmails_AutomatedEmailList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Components\AlertComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Components\AlertComponent.Designer.cs">
+      <DependentUpon>AlertComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Components\ContactComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Components\ContactComponent.Designer.cs">
+      <DependentUpon>ContactComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Components\TicketJournalComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Components\TicketJournalComponent.Designer.cs">
+      <DependentUpon>TicketJournalComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormCustomerEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormCustomerEditor.Designer.cs">
+      <DependentUpon>FormCustomerEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormIssueEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormIssueEditor.Designer.cs">
+      <DependentUpon>FormIssueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormJournalEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormJournalEntry.Designer.cs">
+      <DependentUpon>FormJournalEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormLFDEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormLFDEditor.Designer.cs">
+      <DependentUpon>FormLFDEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormMagicInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormMagicInfo.Designer.cs">
+      <DependentUpon>FormMagicInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormMagicInfoAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormMagicInfoAlert.Designer.cs">
+      <DependentUpon>FormMagicInfoAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormMarketEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormMarketEditor.Designer.cs">
+      <DependentUpon>FormMarketEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormReporting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormReporting.Designer.cs">
+      <DependentUpon>FormReporting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormServerEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormServerEditor.Designer.cs">
+      <DependentUpon>FormServerEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_SerialNumberSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_SerialNumberSearch.Designer.cs">
+      <DependentUpon>FormRMA_SerialNumberSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_RMA_Area_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_RMA_Area_AddEdit.Designer.cs">
+      <DependentUpon>FormAdmin_RMA_Area_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_BlackoutSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_BlackoutSchedule.Designer.cs">
+      <DependentUpon>FormAsset_BlackoutSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CameraCheck\FormCameraCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CameraCheck\FormCameraCheck.Designer.cs">
+      <DependentUpon>FormCameraCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_Inventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_Inventory.Designer.cs">
+      <DependentUpon>FormRMA_Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_Migrate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_Migrate.Designer.cs">
+      <DependentUpon>FormRMA_Migrate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_BinScan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_BinScan.Designer.cs">
+      <DependentUpon>FormRMA_BinScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_AreaZone_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_AreaZone_Select.Designer.cs">
+      <DependentUpon>FormRMA_AreaZone_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_RMA_Zone_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_RMA_Zone_AddEdit.Designer.cs">
+      <DependentUpon>FormAdmin_RMA_Zone_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_RMA_AreasAndZones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_RMA_AreasAndZones.Designer.cs">
+      <DependentUpon>FormAdmin_RMA_AreasAndZones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_OutputMethod_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_OutputMethod_Select.Designer.cs">
+      <DependentUpon>FormAsset_OutputMethod_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_CabinetType_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_CabinetType_Select.Designer.cs">
+      <DependentUpon>FormAsset_CabinetType_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_AssetOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_AssetOptions.Designer.cs">
+      <DependentUpon>FormAdmin_AssetOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_BinSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_BinSelect.Designer.cs">
+      <DependentUpon>FormRMA_BinSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_InventoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_InventoryView.Designer.cs">
+      <DependentUpon>FormRMA_InventoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_MoveStuff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_MoveStuff.Designer.cs">
+      <DependentUpon>FormRMA_MoveStuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Shipment\FormShipments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Shipment\FormShipments.Designer.cs">
+      <DependentUpon>FormShipments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Shipment_Legacy\FormShipmentPrintOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Shipment_Legacy\FormShipmentPrintOption.Designer.cs">
+      <DependentUpon>FormShipmentPrintOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormTicket_PrerequisiteChecks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormTicket_PrerequisiteChecks.Designer.cs">
+      <DependentUpon>FormTicket_PrerequisiteChecks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\General\FormUserInput_WithExpire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\General\FormUserInput_WithExpire.Designer.cs">
+      <DependentUpon>FormUserInput_WithExpire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FormLiftType_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\FormLiftType_Select.Designer.cs">
+      <DependentUpon>FormLiftType_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormRentalCompany_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormRentalCompany_Select.Designer.cs">
+      <DependentUpon>FormRentalCompany_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdministration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdministration.Designer.cs">
+      <DependentUpon>FormAdministration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_RentalCompanies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_RentalCompanies.Designer.cs">
+      <DependentUpon>FormAdmin_RentalCompanies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_SparePartAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_SparePartAddEdit.Designer.cs">
+      <DependentUpon>FormAsset_SparePartAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Assembly\FormAssemblyPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Assembly\FormAssemblyPicker.Designer.cs">
+      <DependentUpon>FormAssemblyPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Shipment_Legacy\FormList_ShipmentDestinations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Shipment_Legacy\FormList_ShipmentDestinations.Designer.cs">
+      <DependentUpon>FormList_ShipmentDestinations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Emails_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Emails_AddEdit.Designer.cs">
+      <DependentUpon>FormAdmin_Emails_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Emails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Emails.Designer.cs">
+      <DependentUpon>FormAdmin_Emails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_CameraTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_CameraTypes.Designer.cs">
+      <DependentUpon>FormAdmin_CameraTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\General\FormNotifications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\General\FormNotifications.Designer.cs">
+      <DependentUpon>FormNotifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Shipment_Legacy\FormShipment_Editor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Shipment_Legacy\FormShipment_Editor.Designer.cs">
+      <DependentUpon>FormShipment_Editor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormTicket_Rental.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormTicket_Rental.Designer.cs">
+      <DependentUpon>FormTicket_Rental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormTicket_TechLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormTicket_TechLog.Designer.cs">
+      <DependentUpon>FormTicket_TechLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormPMAChecklist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormPMAChecklist.Designer.cs">
+      <DependentUpon>FormPMAChecklist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_PMAs_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_PMAs_AddEdit.Designer.cs">
+      <DependentUpon>FormAdmin_PMAs_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_PMAs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_PMAs.Designer.cs">
+      <DependentUpon>FormAdmin_PMAs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Salespeople_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Salespeople_AddEdit.Designer.cs">
+      <DependentUpon>FormAdmin_Salespeople_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Salespeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Salespeople.Designer.cs">
+      <DependentUpon>FormAdmin_Salespeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_CameraType_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_CameraType_AddEdit.Designer.cs">
+      <DependentUpon>FormAdmin_CameraType_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Assembly_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Assembly_Select.Designer.cs">
+      <DependentUpon>FormAdmin_Assembly_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Activity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Activity.Designer.cs">
+      <DependentUpon>FormAdmin_Activity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FormGeoCodeConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\FormGeoCodeConfirm.Designer.cs">
+      <DependentUpon>FormGeoCodeConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormHelp_ChangeLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormHelp_ChangeLog.Designer.cs">
+      <DependentUpon>FormHelp_ChangeLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_FailureType_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_FailureType_Select.Designer.cs">
+      <DependentUpon>FormRMA_FailureType_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\FormList_Markets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\FormList_Markets.Designer.cs">
+      <DependentUpon>FormList_Markets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reporting\FormReporting_Ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reporting\FormReporting_Ticket.Designer.cs">
+      <DependentUpon>FormReporting_Ticket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reporting\FormReporting_RMA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reporting\FormReporting_RMA.Designer.cs">
+      <DependentUpon>FormReporting_RMA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_Modify.Designer.cs">
+      <DependentUpon>FormRMA_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_RootCause_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_RootCause_Select.Designer.cs">
+      <DependentUpon>FormRMA_RootCause_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Component_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Component_AddEdit.Designer.cs">
+      <DependentUpon>FormAdmin_Component_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_ComponentManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_ComponentManagement.Designer.cs">
+      <DependentUpon>FormAdmin_ComponentManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_Create.Designer.cs">
+      <DependentUpon>FormRMA_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_RMA_FailureRepair_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_RMA_FailureRepair_AddEdit.Designer.cs">
+      <DependentUpon>FormAdmin_RMA_FailureRepair_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_AssemblyType_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_AssemblyType_AddEdit.Designer.cs">
+      <DependentUpon>FormAdmin_AssemblyType_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Assembly_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Assembly_AddEdit.Designer.cs">
+      <DependentUpon>FormAdmin_Assembly_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reporting\FormReporting_Symptoms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reporting\FormReporting_Symptoms.Designer.cs">
+      <DependentUpon>FormReporting_Symptoms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reporting\FormReporting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reporting\FormReporting.Designer.cs">
+      <DependentUpon>FormReporting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reporting\FormReporting_Graph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reporting\FormReporting_Graph.Designer.cs">
+      <DependentUpon>FormReporting_Graph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_Editor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_Editor.designer.cs">
+      <DependentUpon>FormRMA_Editor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_List.designer.cs">
+      <DependentUpon>FormRMA_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_AssemblyAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_AssemblyAdd.Designer.cs">
+      <DependentUpon>FormRMA_AssemblyAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_Component_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_Component_Select.Designer.cs">
+      <DependentUpon>FormRMA_Component_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_RMA_FailureRepair_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_RMA_FailureRepair_Management.Designer.cs">
+      <DependentUpon>FormAdmin_RMA_FailureRepair_Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_RepairType_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_RepairType_Select.Designer.cs">
+      <DependentUpon>FormRMA_RepairType_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_TimeAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormRMA_TimeAnalysis.Designer.cs">
+      <DependentUpon>FormRMA_TimeAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_ShipmentMethod_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_ShipmentMethod_AddEdit.Designer.cs">
+      <DependentUpon>FormAdmin_ShipmentMethod_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FormList_Assets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\FormList_Assets.Designer.cs">
+      <DependentUpon>FormList_Assets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\General\ClassDefinitions.cs" />
+    <Compile Include="Classes\Admin\ClassEncDec.cs" />
+    <Compile Include="Classes\Misc\ClassFixedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Misc\ClassNullDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\RMA\ClassLegacyRMA_PDFPrint.cs" />
+    <Compile Include="Classes\RMA\ClassLegacyRMA_RepairTypes.cs" />
+    <Compile Include="Classes\General\ClassUtility.cs" />
+    <Compile Include="Classes\General\ClassDatabase.cs" />
+    <Compile Include="Forms\Admin\FormAdmin_MarketConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_MarketConfig.Designer.cs">
+      <DependentUpon>FormAdmin_MarketConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Assembly\FormAssemblyType_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Assembly\FormAssemblyType_Select.Designer.cs">
+      <DependentUpon>FormAssemblyType_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_AssemblyManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_AssemblyManagement.Designer.cs">
+      <DependentUpon>FormAdmin_AssemblyManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormList_RentalCompanies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormList_RentalCompanies.Designer.cs">
+      <DependentUpon>FormList_RentalCompanies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormLegacyRMAManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormLegacyRMAManagement.Designer.cs">
+      <DependentUpon>FormLegacyRMAManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Shipment_Legacy\FormShipmentItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Shipment_Legacy\FormShipmentItem.Designer.cs">
+      <DependentUpon>FormShipmentItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_ShipmentMethods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_ShipmentMethods.Designer.cs">
+      <DependentUpon>FormAdmin_ShipmentMethods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Solution_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Solution_AddEdit.Designer.cs">
+      <DependentUpon>FormAdmin_Solution_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_SymptomsSolutions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_SymptomsSolutions.Designer.cs">
+      <DependentUpon>FormAdmin_SymptomsSolutions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormTicket_AddImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormTicket_AddImage.Designer.cs">
+      <DependentUpon>FormTicket_AddImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormTicket_ImageView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormTicket_ImageView.Designer.cs">
+      <DependentUpon>FormTicket_ImageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormJournal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormJournal.Designer.cs">
+      <DependentUpon>FormJournal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormHelp_About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormHelp_About.Designer.cs">
+      <DependentUpon>FormHelp_About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\FormMarket_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\FormMarket_Select.Designer.cs">
+      <DependentUpon>FormMarket_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RMA\FormLegacyRMANoReturnApproval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RMA\FormLegacyRMANoReturnApproval.Designer.cs">
+      <DependentUpon>FormLegacyRMANoReturnApproval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\General\FormSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\General\FormSearch.Designer.cs">
+      <DependentUpon>FormSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_ServiceReminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_ServiceReminder.Designer.cs">
+      <DependentUpon>FormAsset_ServiceReminder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\General\FormSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\General\FormSettings.Designer.cs">
+      <DependentUpon>FormSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Shipment_Legacy\FormShipment_List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Shipment_Legacy\FormShipment_List.Designer.cs">
+      <DependentUpon>FormShipment_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tech\FormList_Techs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tech\FormList_Techs.Designer.cs">
+      <DependentUpon>FormList_Techs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormTicket_Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormTicket_Create.Designer.cs">
+      <DependentUpon>FormTicket_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\General\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\General\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormList_Tickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ticket\FormList_Tickets.Designer.cs">
+      <DependentUpon>FormList_Tickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_User_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_User_Details.Designer.cs">
+      <DependentUpon>FormAdmin_User_Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\General\FormWorkbenchImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\General\FormWorkbenchImport.Designer.cs">
+      <DependentUpon>FormWorkbenchImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Customer\Form_CustomerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Customer\Form_CustomerList.Designer.cs">
+      <DependentUpon>Form_CustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IExportableToCsv.cs" />
+    <Compile Include="Interfaces\ISupportsJournal.cs" />
+    <Compile Include="MagicInfo\Forms\FormSolutionEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormSolutionEditor.Designer.cs">
+      <DependentUpon>FormSolutionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormStatusEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormStatusEditor.Designer.cs">
+      <DependentUpon>FormStatusEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormTicketCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Forms\FormTicketCreation.Designer.cs">
+      <DependentUpon>FormTicketCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucIssueEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucIssueEditor.Designer.cs">
+      <DependentUpon>ucIssueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucJournalEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucJournalEntry.Designer.cs">
+      <DependentUpon>ucJournalEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucSolutionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucSolutionEditor.Designer.cs">
+      <DependentUpon>ucSolutionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucStatusEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucStatusEditor.Designer.cs">
+      <DependentUpon>ucStatusEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucTicketCreation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucTicketCreation.Designer.cs">
+      <DependentUpon>ucTicketCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MagicInfo\Components\ActionsComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Components\ActionsComponent.Designer.cs">
+      <DependentUpon>ActionsComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Components\AddressComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Components\AddressComponent.Designer.cs">
+      <DependentUpon>AddressComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Components\AssetComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Components\AssetComponent.Designer.cs">
+      <DependentUpon>AssetComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Components\CustomerComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Components\CustomerComponent.Designer.cs">
+      <DependentUpon>CustomerComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Components\MarketComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Components\MarketComponent.Designer.cs">
+      <DependentUpon>MarketComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Components\ServerComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Components\ServerComponent.Designer.cs">
+      <DependentUpon>ServerComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Components\ConfidentialComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Components\ConfidentialComponent.Designer.cs">
+      <DependentUpon>ConfidentialComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Components\TicketInfoComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Components\TicketInfoComponent.Designer.cs">
+      <DependentUpon>TicketInfoComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\Components\VerificationComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\Components\VerificationComponent.Designer.cs">
+      <DependentUpon>VerificationComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucCustomerEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucCustomerEditor.Designer.cs">
+      <DependentUpon>ucCustomerEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucLFDEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucLFDEditor.Designer.cs">
+      <DependentUpon>ucLFDEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucMarketEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucMarketEditor.Designer.cs">
+      <DependentUpon>ucMarketEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucServerEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucServerEditor.Designer.cs">
+      <DependentUpon>ucServerEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Admin\ucUserManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Admin\ucUserManager.Designer.cs">
+      <DependentUpon>ucUserManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucAssemblyList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucAssemblyList.Designer.cs">
+      <DependentUpon>ucAssemblyList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucAssetInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucAssetInfo.Designer.cs">
+      <DependentUpon>ucAssetInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucRMADetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucRMADetails.Designer.cs">
+      <DependentUpon>ucRMADetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucRMATimeBreakdown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucRMATimeBreakdown.Designer.cs">
+      <DependentUpon>ucRMATimeBreakdown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Wiki\TstWiki.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Wiki\TstWiki.Designer.cs">
+      <DependentUpon>TstWiki.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_AssemblyCategory_AddEdit.resx">
+      <DependentUpon>FormAdmin_AssemblyCategory_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_AssetTags.resx">
+      <DependentUpon>FormAdmin_AssetTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_AssetTags_New.resx">
+      <DependentUpon>FormAdmin_AssetTags_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_Config.resx">
+      <DependentUpon>FormAdmin_Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_Symptom_AddEdit.resx">
+      <DependentUpon>FormAdmin_Symptom_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_Solution_Select.resx">
+      <DependentUpon>FormAdmin_Solution_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Assembly\FormAssemblyCategory_Select.resx">
+      <DependentUpon>FormAssemblyCategory_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\FormAsset_ClientConnection_Select.resx">
+      <DependentUpon>FormAsset_ClientConnection_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\FormAsset_Document_New.resx">
+      <DependentUpon>FormAsset_Document_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\FormAsset_ControllerSoftware_Select.resx">
+      <DependentUpon>FormAsset_ControllerSoftware_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\FormAsset_ControllerConnection_Select.resx">
+      <DependentUpon>FormAsset_ControllerConnection_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\FormAsset_ControllerHardware_Select.resx">
+      <DependentUpon>FormAsset_ControllerHardware_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CameraCheck\FormCameraCheck_Audit.resx">
+      <DependentUpon>FormCameraCheck_Audit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CameraCheck\FormCameraCheck_Log.resx">
+      <DependentUpon>FormCameraCheck_Log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CameraCheck\FormCameraCheck_Review.resx">
+      <DependentUpon>FormCameraCheck_Review.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_Symptom_Select.resx">
+      <DependentUpon>FormAdmin_Symptom_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer\FormCustomerAdvancedEmail.resx">
+      <DependentUpon>FormCustomerAdvancedEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer\FormEmails_AutomatedEmailList.resx">
+      <DependentUpon>FormEmails_AutomatedEmailList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA.resx">
+      <DependentUpon>FormRMA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ticket\FormTicketPriority.resx">
+      <DependentUpon>FormTicketPriority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Components\AlertComponent.resx">
+      <DependentUpon>AlertComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Components\ContactComponent.resx">
+      <DependentUpon>ContactComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Components\TicketJournalComponent.resx">
+      <DependentUpon>TicketJournalComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Forms\FormCustomerEditor.resx">
+      <DependentUpon>FormCustomerEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Forms\FormIssueEditor.resx">
+      <DependentUpon>FormIssueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Forms\FormJournalEntry.resx">
+      <DependentUpon>FormJournalEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Forms\FormLFDEditor.resx">
+      <DependentUpon>FormLFDEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Forms\FormMagicInfo.resx">
+      <DependentUpon>FormMagicInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Forms\FormMagicInfoAlert.resx">
+      <DependentUpon>FormMagicInfoAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Forms\FormMarketEditor.resx">
+      <DependentUpon>FormMarketEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Forms\FormReporting.resx">
+      <DependentUpon>FormReporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Forms\FormServerEditor.resx">
+      <DependentUpon>FormServerEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_SerialNumberSearch.resx">
+      <DependentUpon>FormRMA_SerialNumberSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_RMA_Area_AddEdit.resx">
+      <DependentUpon>FormAdmin_RMA_Area_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\FormAsset_BlackoutSchedule.resx">
+      <DependentUpon>FormAsset_BlackoutSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CameraCheck\FormCameraCheck.resx">
+      <DependentUpon>FormCameraCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_Inventory.resx">
+      <DependentUpon>FormRMA_Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_Migrate.resx">
+      <DependentUpon>FormRMA_Migrate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_BinScan.resx">
+      <DependentUpon>FormRMA_BinScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_AreaZone_Select.resx">
+      <DependentUpon>FormRMA_AreaZone_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_RMA_Zone_AddEdit.resx">
+      <DependentUpon>FormAdmin_RMA_Zone_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_RMA_AreasAndZones.resx">
+      <DependentUpon>FormAdmin_RMA_AreasAndZones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\FormAsset_OutputMethod_Select.resx">
+      <DependentUpon>FormAsset_OutputMethod_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\FormAsset_CabinetType_Select.resx">
+      <DependentUpon>FormAsset_CabinetType_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_AssetOptions.resx">
+      <DependentUpon>FormAdmin_AssetOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_BinSelect.resx">
+      <DependentUpon>FormRMA_BinSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_InventoryView.resx">
+      <DependentUpon>FormRMA_InventoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_MoveStuff.resx">
+      <DependentUpon>FormRMA_MoveStuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Shipment\FormShipments.resx">
+      <DependentUpon>FormShipments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Shipment_Legacy\FormShipmentPrintOption.resx">
+      <DependentUpon>FormShipmentPrintOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ticket\FormTicket_PrerequisiteChecks.resx">
+      <DependentUpon>FormTicket_PrerequisiteChecks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\General\FormUserInput_WithExpire.resx">
+      <DependentUpon>FormUserInput_WithExpire.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\FormLiftType_Select.resx">
+      <DependentUpon>FormLiftType_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ticket\FormRentalCompany_Select.resx">
+      <DependentUpon>FormRentalCompany_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdministration.resx">
+      <DependentUpon>FormAdministration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_RentalCompanies.resx">
+      <DependentUpon>FormAdmin_RentalCompanies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\FormAsset_SparePartAddEdit.resx">
+      <DependentUpon>FormAsset_SparePartAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Assembly\FormAssemblyPicker.resx">
+      <DependentUpon>FormAssemblyPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Shipment_Legacy\FormList_ShipmentDestinations.resx">
+      <DependentUpon>FormList_ShipmentDestinations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_Emails_AddEdit.resx">
+      <DependentUpon>FormAdmin_Emails_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_Emails.resx">
+      <DependentUpon>FormAdmin_Emails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_CameraTypes.resx">
+      <DependentUpon>FormAdmin_CameraTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\General\FormNotifications.resx">
+      <DependentUpon>FormNotifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Shipment_Legacy\FormShipment_Editor.resx">
+      <DependentUpon>FormShipment_Editor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ticket\FormTicket_Rental.resx">
+      <DependentUpon>FormTicket_Rental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ticket\FormTicket_TechLog.resx">
+      <DependentUpon>FormTicket_TechLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ticket\FormPMAChecklist.resx">
+      <DependentUpon>FormPMAChecklist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_PMAs_AddEdit.resx">
+      <DependentUpon>FormAdmin_PMAs_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_PMAs.resx">
+      <DependentUpon>FormAdmin_PMAs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_Salespeople_AddEdit.resx">
+      <DependentUpon>FormAdmin_Salespeople_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_Salespeople.resx">
+      <DependentUpon>FormAdmin_Salespeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_CameraType_AddEdit.resx">
+      <DependentUpon>FormAdmin_CameraType_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_Assembly_Select.resx">
+      <DependentUpon>FormAdmin_Assembly_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_Activity.resx">
+      <DependentUpon>FormAdmin_Activity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\FormGeoCodeConfirm.resx">
+      <DependentUpon>FormGeoCodeConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormHelp_ChangeLog.resx">
+      <DependentUpon>FormHelp_ChangeLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_FailureType_Select.resx">
+      <DependentUpon>FormRMA_FailureType_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer\FormList_Markets.resx">
+      <DependentUpon>FormList_Markets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reporting\FormReporting_Ticket.resx">
+      <DependentUpon>FormReporting_Ticket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reporting\FormReporting_RMA.resx">
+      <DependentUpon>FormReporting_RMA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_Modify.resx">
+      <DependentUpon>FormRMA_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_RootCause_Select.resx">
+      <DependentUpon>FormRMA_RootCause_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_Component_AddEdit.resx">
+      <DependentUpon>FormAdmin_Component_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_ComponentManagement.resx">
+      <DependentUpon>FormAdmin_ComponentManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_Create.resx">
+      <DependentUpon>FormRMA_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_RMA_FailureRepair_AddEdit.resx">
+      <DependentUpon>FormAdmin_RMA_FailureRepair_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_AssemblyType_AddEdit.resx">
+      <DependentUpon>FormAdmin_AssemblyType_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_Assembly_AddEdit.resx">
+      <DependentUpon>FormAdmin_Assembly_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reporting\FormReporting_Symptoms.resx">
+      <DependentUpon>FormReporting_Symptoms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reporting\FormReporting.resx">
+      <DependentUpon>FormReporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reporting\FormReporting_Graph.resx">
+      <DependentUpon>FormReporting_Graph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_Editor.resx">
+      <DependentUpon>FormRMA_Editor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_List.resx">
+      <DependentUpon>FormRMA_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_AssemblyAdd.resx">
+      <DependentUpon>FormRMA_AssemblyAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_Component_Select.resx">
+      <DependentUpon>FormRMA_Component_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_RMA_FailureRepair_Management.resx">
+      <DependentUpon>FormAdmin_RMA_FailureRepair_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_RepairType_Select.resx">
+      <DependentUpon>FormRMA_RepairType_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormRMA_TimeAnalysis.resx">
+      <DependentUpon>FormRMA_TimeAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_ShipmentMethod_AddEdit.resx">
+      <DependentUpon>FormAdmin_ShipmentMethod_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\FormList_Assets.resx">
+      <DependentUpon>FormList_Assets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_MarketConfig.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormAdmin_MarketConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Assembly\FormAssemblyType_Select.resx">
+      <DependentUpon>FormAssemblyType_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_AssemblyManagement.resx">
+      <DependentUpon>FormAdmin_AssemblyManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ticket\FormList_RentalCompanies.resx">
+      <DependentUpon>FormList_RentalCompanies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormLegacyRMAManagement.resx">
+      <DependentUpon>FormLegacyRMAManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Shipment_Legacy\FormShipmentItem.resx">
+      <DependentUpon>FormShipmentItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_ShipmentMethods.resx">
+      <DependentUpon>FormAdmin_ShipmentMethods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_Solution_AddEdit.resx">
+      <DependentUpon>FormAdmin_Solution_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_SymptomsSolutions.resx">
+      <DependentUpon>FormAdmin_SymptomsSolutions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ticket\FormTicket_AddImage.resx">
+      <DependentUpon>FormTicket_AddImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ticket\FormTicket_ImageView.resx">
+      <DependentUpon>FormTicket_ImageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ticket\FormJournal.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormJournal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormHelp_About.resx">
+      <DependentUpon>FormHelp_About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer\FormMarket_Select.resx">
+      <DependentUpon>FormMarket_Select.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RMA\FormLegacyRMANoReturnApproval.resx">
+      <DependentUpon>FormLegacyRMANoReturnApproval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\General\FormSearch.resx">
+      <DependentUpon>FormSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\FormAsset_ServiceReminder.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormAsset_ServiceReminder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\General\FormSettings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Shipment_Legacy\FormShipment_List.resx">
+      <DependentUpon>FormShipment_List.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tech\FormList_Techs.resx">
+      <DependentUpon>FormList_Techs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ticket\FormTicket_Create.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormTicket_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\General\FormMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ticket\FormList_Tickets.resx">
+      <DependentUpon>FormList_Tickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_User_Details.resx">
+      <DependentUpon>FormAdmin_User_Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\General\FormWorkbenchImport.resx">
+      <DependentUpon>FormWorkbenchImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Customer\Form_CustomerList.resx">
+      <DependentUpon>Form_CustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Forms\FormSolutionEditor.resx">
+      <DependentUpon>FormSolutionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Forms\FormStatusEditor.resx">
+      <DependentUpon>FormStatusEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Forms\FormTicketCreation.resx">
+      <DependentUpon>FormTicketCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\UserControls\ucIssueEditor.resx">
+      <DependentUpon>ucIssueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\UserControls\ucJournalEntry.resx">
+      <DependentUpon>ucJournalEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\UserControls\ucSolutionEditor.resx">
+      <DependentUpon>ucSolutionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\UserControls\ucStatusEditor.resx">
+      <DependentUpon>ucStatusEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\UserControls\ucTicketCreation.resx">
+      <DependentUpon>ucTicketCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\General\FormSupervisor_Override.resx">
+      <DependentUpon>FormSupervisor_Override.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Admin\ucUserManager.resx">
+      <DependentUpon>ucUserManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Asset\ucAssetList.resx">
+      <DependentUpon>ucAssetList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Asset\ucAssetSystemBackup.resx">
+      <DependentUpon>ucAssetSystemBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Asset\ucBlackoutScheduleEntryControl.resx">
+      <DependentUpon>ucBlackoutScheduleEntryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Camera Check\ucCameraCheck.resx">
+      <DependentUpon>ucCameraCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Camera Check\ucCameraCheckReview.resx">
+      <DependentUpon>ucCameraCheckReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Customer\CustomerEditor.resx">
+      <DependentUpon>CustomerEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Components\ActionsComponent.resx">
+      <DependentUpon>ActionsComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Components\AddressComponent.resx">
+      <DependentUpon>AddressComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Components\AssetComponent.resx">
+      <DependentUpon>AssetComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Components\CustomerComponent.resx">
+      <DependentUpon>CustomerComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Components\MarketComponent.resx">
+      <DependentUpon>MarketComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Components\ServerComponent.resx">
+      <DependentUpon>ServerComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Components\ConfidentialComponent.resx">
+      <DependentUpon>ConfidentialComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Components\TicketInfoComponent.resx">
+      <DependentUpon>TicketInfoComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\Components\VerificationComponent.resx">
+      <DependentUpon>VerificationComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\UserControls\ucCustomerEditor.resx">
+      <DependentUpon>ucCustomerEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\UserControls\ucLFDEditor.resx">
+      <DependentUpon>ucLFDEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\UserControls\ucAssetMagicInfo.resx">
+      <DependentUpon>ucAssetMagicInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\UserControls\ucMagicInfoTracker.resx">
+      <DependentUpon>ucMagicInfoTracker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\UserControls\ucMarketEditor.resx">
+      <DependentUpon>ucMarketEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\UserControls\ucServerEditor.resx">
+      <DependentUpon>ucServerEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagicInfo\UserControls\ucTicketMagicInfo.resx">
+      <DependentUpon>ucTicketMagicInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RMA\ucAssemblyList.resx">
+      <DependentUpon>ucAssemblyList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RMA\ucAssetInfo.resx">
+      <DependentUpon>ucAssetInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RMA\ucRMADetails.resx">
+      <DependentUpon>ucRMADetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RMA\ucRMATimeBreakdown.resx">
+      <DependentUpon>ucRMATimeBreakdown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Shipment\ucShipment.resx">
+      <DependentUpon>ucShipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Shipment\ucShipmentTracker.resx">
+      <DependentUpon>ucShipmentTracker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Ticket\ucJournalViewer.resx">
+      <DependentUpon>ucJournalViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Ticket\ucTicket_Rentals.resx">
+      <DependentUpon>ucTicket_Rentals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Asset\ucAssetLinker.resx">
+      <DependentUpon>ucAssetLinker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Asset\ucAssetSpareParts.resx">
+      <DependentUpon>ucAssetSpareParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Shipment\ucShipmentList.resx">
+      <DependentUpon>ucShipmentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Asset\ucAssetEditor.resx">
+      <DependentUpon>ucAssetEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Asset\ucAsset_IBOM.resx">
+      <DependentUpon>ucAsset_IBOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\General\ucFileManager.resx">
+      <DependentUpon>ucFileManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\General\ucGeneralNote.resx">
+      <DependentUpon>ucGeneralNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\General\ucGeneralNotes.resx">
+      <DependentUpon>ucGeneralNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\General\ucHourMaskPicker.resx">
+      <DependentUpon>ucHourMaskPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RMA\ucLegacyRMAJobLogLine.resx">
+      <DependentUpon>ucLegacyRMAJobLogLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RMA\ucLegacyRMAPartDetail.resx">
+      <DependentUpon>ucLegacyRMAPartDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RMA\ucLegacyRMAPartLineEditor.resx">
+      <DependentUpon>ucLegacyRMAPartLineEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RMA\ucRMAList.resx">
+      <DependentUpon>ucRMAList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Tech\ucTechEditor.resx">
+      <DependentUpon>ucTechEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Ticket\ucTicketEditor.resx">
+      <DependentUpon>ucTicketEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Ticket\ucTicketTracker.resx">
+      <DependentUpon>ucTicketTracker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Asset\ucAssetMiniWarrantyStatus.resx">
+      <DependentUpon>ucAssetMiniWarrantyStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Asset\ucWarrantyStatus.resx">
+      <DependentUpon>ucWarrantyStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\General\FormUpdateCheck.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormUpdateCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\FormAdmin_Users.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormAdmin_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\RMA\ucLegacyRMAListLabels.resx">
+      <DependentUpon>ucLegacyRMAListLabels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\General\FormUserInput.resx">
+      <DependentUpon>FormUserInput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Asset\FormAsset_Warranty.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormAsset_Warranty.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <BaseApplicationManifest Include="Properties\app.manifest" />
+    <EmbeddedResource Include="UserControls\Wiki\TstWiki.resx">
+      <DependentUpon>TstWiki.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Required Files\OSA_Checklist.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Required Files\OSA_Cover.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Required Files\RMA Bin Label.btw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Required Files\RMA Zone Label.btw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Required Files\SDB Default Tracker State.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Required Files\template.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SDB_TemporaryKey.pfx" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Forms\General\FormSupervisor_Override.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\General\FormSupervisor_Override.designer.cs">
+      <DependentUpon>FormSupervisor_Override.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReSharperAnnotations.cs" />
+    <Compile Include="Classes\Asset\ClassSparePart.cs" />
+    <Compile Include="UserControls\Asset\ucAssetList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucAssetList.Designer.cs">
+      <DependentUpon>ucAssetList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucAssetSystemBackup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucAssetSystemBackup.Designer.cs">
+      <DependentUpon>ucAssetSystemBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucBlackoutScheduleEntryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucBlackoutScheduleEntryControl.Designer.cs">
+      <DependentUpon>ucBlackoutScheduleEntryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Camera Check\ucCameraCheck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Camera Check\ucCameraCheck.Designer.cs">
+      <DependentUpon>ucCameraCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Camera Check\ucCameraCheckReview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Camera Check\ucCameraCheckReview.Designer.cs">
+      <DependentUpon>ucCameraCheckReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Customer\CustomerEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Customer\CustomerEditor.Designer.cs">
+      <DependentUpon>CustomerEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucAssetMagicInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucAssetMagicInfo.Designer.cs">
+      <DependentUpon>ucAssetMagicInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucMagicInfoTracker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucMagicInfoTracker.Designer.cs">
+      <DependentUpon>ucMagicInfoTracker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucTicketMagicInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MagicInfo\UserControls\ucTicketMagicInfo.Designer.cs">
+      <DependentUpon>ucTicketMagicInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Shipment\ucShipment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Shipment\ucShipment.Designer.cs">
+      <DependentUpon>ucShipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Shipment\ucShipmentTracker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Shipment\ucShipmentTracker.Designer.cs">
+      <DependentUpon>ucShipmentTracker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Ticket\ucJournalViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ticket\ucJournalViewer.Designer.cs">
+      <DependentUpon>ucJournalViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Ticket\ucTicket_Rentals.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ticket\ucTicket_Rentals.Designer.cs">
+      <DependentUpon>ucTicket_Rentals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucAssetLinker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucAssetLinker.Designer.cs">
+      <DependentUpon>ucAssetLinker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucAssetSpareParts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucAssetSpareParts.Designer.cs">
+      <DependentUpon>ucAssetSpareParts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Shipment\ucShipmentList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Shipment\ucShipmentList.Designer.cs">
+      <DependentUpon>ucShipmentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucAssetEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucAssetEditor.Designer.cs">
+      <DependentUpon>ucAssetEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucAsset_IBOM.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucAsset_IBOM.Designer.cs">
+      <DependentUpon>ucAsset_IBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\General\ucFileManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\General\ucFileManager.Designer.cs">
+      <DependentUpon>ucFileManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\General\ucGeneralNote.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\General\ucGeneralNote.Designer.cs">
+      <DependentUpon>ucGeneralNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\General\ucGeneralNotes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\General\ucGeneralNotes.Designer.cs">
+      <DependentUpon>ucGeneralNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\General\ucHourMaskPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\General\ucHourMaskPicker.Designer.cs">
+      <DependentUpon>ucHourMaskPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucLegacyRMAJobLogLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucLegacyRMAJobLogLine.Designer.cs">
+      <DependentUpon>ucLegacyRMAJobLogLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucLegacyRMAPartDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucLegacyRMAPartDetail.Designer.cs">
+      <DependentUpon>ucLegacyRMAPartDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucLegacyRMAPartLineEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucLegacyRMAPartLineEditor.Designer.cs">
+      <DependentUpon>ucLegacyRMAPartLineEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucRMAList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucRMAList.Designer.cs">
+      <DependentUpon>ucRMAList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\General\ucSpellCheckLarge.xaml.cs">
+      <DependentUpon>ucSpellCheckLarge.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\General\ucSpellCheckSmall.xaml.cs">
+      <DependentUpon>ucSpellCheckSmall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Tech\ucTechEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Tech\ucTechEditor.Designer.cs">
+      <DependentUpon>ucTechEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Ticket\ucTicketEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ticket\ucTicketEditor.Designer.cs">
+      <DependentUpon>ucTicketEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Ticket\ucTicketTracker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ticket\ucTicketTracker.Designer.cs">
+      <DependentUpon>ucTicketTracker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucAssetMiniWarrantyStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucAssetMiniWarrantyStatus.Designer.cs">
+      <DependentUpon>ucAssetMiniWarrantyStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucWarrantyStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Asset\ucWarrantyStatus.Designer.cs">
+      <DependentUpon>ucWarrantyStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\General\FormUpdateCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\General\FormUpdateCheck.Designer.cs">
+      <DependentUpon>FormUpdateCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\FormAdmin_Users.Designer.cs">
+      <DependentUpon>FormAdmin_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucLegacyRMAListLabels.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\RMA\ucLegacyRMAListLabels.Designer.cs">
+      <DependentUpon>ucLegacyRMAListLabels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\General\FormUserInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\General\FormUserInput.Designer.cs">
+      <DependentUpon>FormUserInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_Warranty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Asset\FormAsset_Warranty.Designer.cs">
+      <DependentUpon>FormAsset_Warranty.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.2.0">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="DriverAutomationLibrary">
+      <Guid>{A9F21314-6355-436C-8A69-CC83C81331CE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="License-LGPL.txt" />
+    <None Include="Resources\Check.png" />
+    <None Include="Resources\Edit.png" />
+    <Content Include="World.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\escalate.jpg" />
+    <None Include="Resources\hello_kitty_pink_folder_by_pinklovin-d3lmuk6.png" />
+    <None Include="Resources\magicinfo_logo.jpg" />
+    <None Include="Resources\magicinfo_logo.png" />
+    <None Include="Required Files\magicinfo_logo.png" />
+    <Content Include="Required Files\prismview_icon_gs_256x256.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\16x16_down_dbl_arrow_emb.png" />
+    <None Include="Resources\16x16_down_dbl_arrow.png" />
+    <None Include="Resources\16x16_down_arrow.png" />
+    <None Include="Required Files\waving_flag_16x16.gif" />
+    <None Include="Required Files\icon_computer.png" />
+    <None Include="Required Files\icon_star.png" />
+    <None Include="Required Files\icon_fire.png" />
+    <None Include="Resources\fire.bmp" />
+    <None Include="Required Files\prismview_icon_16x16.png" />
+    <None Include="Required Files\pvm3logo_32x32.png" />
+    <None Include="Resources\teamviewer icon 16x16.png" />
+    <None Include="Resources\y.png" />
+    <None Include="Resources\pvmlv.jpg" />
+    <None Include="Resources\refresh_24x24.png" />
+    <None Include="Resources\stop_24x24.png" />
+    <None Include="Resources\stop_24x24_gs.png" />
+    <None Include="Resources\worker.png" />
+    <None Include="Resources\truck.png" />
+    <None Include="Resources\y16x16.png" />
+    <None Include="Resources\vnc icon 16x16.png" />
+    <None Include="Resources\map_icon.png" />
+    <None Include="Resources\yesco_truck_32x32_trans.png" />
+    <None Include="Resources\worker_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UserControls\General\ucSpellCheckLarge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\General\ucSpellCheckSmall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if not exist "$(TargetPath).locked" if exist "$(TargetPath)" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
+</Project>
