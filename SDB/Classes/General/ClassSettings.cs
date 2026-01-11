@@ -151,7 +151,7 @@ namespace SDB.Classes.General
 		/// <summary>
 		/// Database server address.
 		/// </summary>
-		public string DBServer = @"192.168.90.19";
+		public string DBServer = @"105.1.17.191";
 
 		/// <summary>
 		/// Database server user name.
@@ -161,7 +161,7 @@ namespace SDB.Classes.General
 		/// <summary>
 		/// Database server user password.
 		/// </summary>
-		public string DBPassword = @"";
+		public string DBPassword = @"so1ongMyOldFriend";
 
 		/// <summary>
 		/// Database timeout in seconds.
@@ -186,17 +186,17 @@ namespace SDB.Classes.General
 		/// <summary>
 		/// Email account to use for outgoing email.
 		/// </summary>
-		public string EmailUser = @"noreply@company.com";
+		public string EmailUser = @"noreply@prismview.com";
 
 		/// <summary>
 		/// Email account password to use for outgoing email.
 		/// </summary>
-		public string EmailPassword = @"y9H5$2nITl%MOH56wA";
+		public string EmailPassword = @"ptwe czmm zjqi mlbh";
 
 		/// <summary>
 		/// Update server address.
 		/// </summary>
-		public string UpdateServer = @"192.168.90.88";
+		public string UpdateServer = @"127.0.0.1";
 
 		/// <summary>
 		/// Path to stored camera images (from PVM).
@@ -206,7 +206,7 @@ namespace SDB.Classes.General
 		/// <summary>
 		/// URL for the PV Service Dashboard web application.
 		/// </summary>
-		public string DashboardWebURL = "http://192.168.90.87/dashboard/single.php?a=";
+		public string DashboardWebURL = "http://105.1.17.191/websdb/index.php?page=viewasset&id=";
 
 		/// <summary>
 		/// Which window the Service Database client application should show upon login.
@@ -237,7 +237,7 @@ namespace SDB.Classes.General
 		/// <summary>
 		/// Location of Teamviewer executable.
 		/// </summary>
-		public string TeamviewerPath = @"C:\Program Files (x86)\Teamviewer\Version9\TeamViewer.exe";
+		public string TeamviewerPath = @"C:\Program Files\TeamViewer\TeamViewer.exe";
 
 		/// <summary>
 		/// Font to use for Ticket Journals.

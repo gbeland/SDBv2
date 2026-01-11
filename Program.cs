@@ -13,10 +13,10 @@ namespace SDB
 		private static void Main()
 		{
 			bool ok;
-			_m = new Mutex(true, "Prismview Service Database", out ok);
+			_m = new Mutex(true, "Service Database", out ok);
 			if (!ok)
 			{
-				MessageBox.Show("Another instance of Prismview Service Database is already running.");
+				MessageBox.Show("Another instance of Service Database is already running.");
 				return;
 			}
 

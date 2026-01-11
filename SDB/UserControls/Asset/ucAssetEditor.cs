@@ -741,9 +741,9 @@ namespace SDB.UserControls.Asset
             cmbInterfaceType.Items.Clear();
 
             //Interface type and chip type are temp hardcoded until I have time to add UI to add remove them [TA] 
-            string[] inerfacelist = { "Y4D", "Y4DVIX8", "Y5DVIX8", "Y6DVIX8", "Y7DVIX16E", "Y7DVIX16S", "Y7HDMIX16", "Y8", "Legacy" };
+            string[] inerfacelist = { "Y4D", "Y4DVIX8", "Y5DVIX8", "Y6DVIX8", "Y7DVIX16E", "Y7DVIX16S", "Y7HDMIX16", "Y8HDMIX16", "Receiving Card", "TCON", "Other"};
             cmbInterfaceType.Items.AddRange(inerfacelist);
-            string[] chiplist = {"ST", "TI", "Gen 6", "Gen 7", "Gen 8" };
+            string[] chiplist = {"ST", "TI", "G6", "G7", "G8", "IEA", "IEC", "IEO", "IF", "ISC", "VMR", "XFB", "XHB", "XMF", "XPR", "XRB", "Other"};
             cmbChipType.Items.AddRange(chiplist);
 
             if (cmbInterfaceType.FindStringExact(_asset.InterfaceType) == -1)
