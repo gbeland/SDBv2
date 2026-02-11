@@ -8,7 +8,7 @@
 		Manufacturer="Prismview"
 		Name="SDB"
 		Language="1033"
-		Version="1.10.0.20"
+		Version="26.2.11.1"
 		Id="*"
 		UpgradeCode="FE292C9F-5134-4D86-9FE5-6F48FB84EE03">
 		<!-- DO NOT CHANGE UPGRADECODE! -->
@@ -107,7 +107,7 @@
 				<File Id="Seagull.BarTender.Print.dll" Name="Seagull.BarTender.Print.dll" Source="$(var.SDB_ReqFilesDir)Seagull.BarTender.Print.dll" />
 			</Component>
 			<Component Id="ZedGraph.dll" Guid="7701632f-f019-4e12-bef5-07b65c68ccf5">
-				<File Id="ZedGraph.dll" Name="ZedGraph.dll" Source="$(var.SDB_ReqFilesDir)ZedGraph.dll" />
+				<File Id="ZedGraph.dll" Name="ZedGraph.dll" Source="$(var.SDB_TargetDir)ZedGraph.dll" />
 			</Component>
 			<Component Id="BtSystem.Client.dll" Guid="c5a0feef-763d-4613-ae7a-998a95e3c6ac">
 				<File Id="BtSystem.Client.dll" Name="BtSystem.Client.dll" Source="$(var.SDB_ReqFilesDir)BtSystem.Client.dll" />
