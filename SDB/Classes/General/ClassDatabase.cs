@@ -12,7 +12,7 @@ namespace SDB.Classes.General
 
         public static MySqlConnection CreateMySqlConnection()
 		{
-            return new MySqlConnection(string.Format("Server = {0}; Database = {1}; Uid = {2}; {3}Encrypt = true; Connection Timeout = {4};",
+            return new MySqlConnection(string.Format("Server = {0}; Database = {1}; Uid = {2}; {3}SslMode = Preferred; Connection Timeout = {4};",
                                                      GS.Settings.DBServer,
                                                      GS.Settings.DBName_Service,
                                                      GS.Settings.DBUser,
@@ -23,7 +23,7 @@ namespace SDB.Classes.General
 
         public static MySqlConnection CreateDevMySqlConnection()
         {
-            return new MySqlConnection(string.Format("Server = {0}; Database = {1}; Uid = {2}; {3}Encrypt = true; Connection Timeout = {4};",
+            return new MySqlConnection(string.Format("Server = {0}; Database = {1}; Uid = {2}; {3}SslMode = Preferred; Connection Timeout = {4};",
                                                      "192.168.90.102",
                                                      GS.Settings.DBName_Service,
                                                      GS.Settings.DBUser,
@@ -33,7 +33,7 @@ namespace SDB.Classes.General
 
         public static MySqlConnection CreateMagicInformantMySqlConnection()
         {
-            return new MySqlConnection(string.Format("Server = {0}; Database = {1}; Uid = {2}; {3}; Encrypt = true; Connection Timeout = {4};",
+            return new MySqlConnection(string.Format("Server = {0}; Database = {1}; Uid = {2}; {3}; SslMode = Preferred; Connection Timeout = {4};",
                                                      GS.Settings.DBServer,
                                                      "magic_informant",
                                                      GS.Settings.DBUser,
@@ -51,7 +51,7 @@ namespace SDB.Classes.General
         /// <param name="timeout">Timeout in seconds</param>
         public static MySqlConnection CreateMySqlConnection(string server, string database, string user, string password, string timeout)
         {
-            return new MySqlConnection(string.Format("Server = {0}; Database = {1}; Uid = {2}; {3}Encrypt = true; Connection Timeout = {4};",
+            return new MySqlConnection(string.Format("Server = {0}; Database = {1}; Uid = {2}; {3}SslMode = Preferred; Connection Timeout = {4};",
                                                      server,
                                                      database,
                                                      user,
@@ -61,7 +61,7 @@ namespace SDB.Classes.General
 
         public static MySqlConnection CreateMySqlConnection_MagicinfoLfd()
         {
-            return new MySqlConnection(string.Format("Server = {0}; Database = {1}; Uid = {2}; {3}Encrypt = true; Connection Timeout = {4};",
+            return new MySqlConnection(string.Format("Server = {0}; Database = {1}; Uid = {2}; {3}SslMode = Preferred; Connection Timeout = {4};",
                                                      GS.Settings.DBServer,
                                                      GS.Settings.DBName_Samsung,
                                                      GS.Settings.DBUser,

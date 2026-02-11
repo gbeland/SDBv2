@@ -381,8 +381,7 @@ namespace SDB.Forms.Ticket
         #endregion
 
 		private System.Windows.Forms.Button btnAddEntry;
-		private System.Windows.Forms.Integration.ElementHost elementHost1;
-		private ucSpellCheckSmall ucSpellCheckSmall;
+
         private System.Windows.Forms.Integration.ElementHost elementHost2;
         private ucSpellCheckSmall ucSpellCheckSmall1;
         private System.Windows.Forms.DataGridView dgvJournal;

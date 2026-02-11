@@ -78,8 +78,8 @@
 			this.olvShipmentMethods.FullRowSelect = true;
 			this.olvShipmentMethods.GridLines = true;
 			this.olvShipmentMethods.HideSelection = false;
-			this.olvShipmentMethods.HighlightBackgroundColor = System.Drawing.Color.Empty;
-			this.olvShipmentMethods.HighlightForegroundColor = System.Drawing.Color.Empty;
+			this.olvShipmentMethods.SelectedBackColor = System.Drawing.Color.Empty;
+			this.olvShipmentMethods.SelectedForeColor = System.Drawing.Color.Empty;
 			this.olvShipmentMethods.Location = new System.Drawing.Point(3, 46);
 			this.olvShipmentMethods.MultiSelect = false;
 			this.olvShipmentMethods.Name = "olvShipmentMethods";

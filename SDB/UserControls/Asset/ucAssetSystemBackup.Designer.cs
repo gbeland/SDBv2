@@ -60,8 +60,8 @@
 			this.olvSystemBackups.FullRowSelect = true;
 			this.olvSystemBackups.GridLines = true;
 			this.olvSystemBackups.HasCollapsibleGroups = false;
-			this.olvSystemBackups.HighlightBackgroundColor = System.Drawing.Color.Empty;
-			this.olvSystemBackups.HighlightForegroundColor = System.Drawing.Color.Empty;
+			this.olvSystemBackups.SelectedBackColor = System.Drawing.Color.Empty;
+			this.olvSystemBackups.SelectedForeColor = System.Drawing.Color.Empty;
 			this.olvSystemBackups.Location = new System.Drawing.Point(0, 30);
 			this.olvSystemBackups.MultiSelect = false;
 			this.olvSystemBackups.Name = "olvSystemBackups";

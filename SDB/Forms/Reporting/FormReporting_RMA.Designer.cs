@@ -129,8 +129,8 @@
 			this.olvRMAs.FullRowSelect = true;
 			this.olvRMAs.GridLines = true;
 			this.olvRMAs.HideSelection = false;
-			this.olvRMAs.HighlightBackgroundColor = System.Drawing.Color.Empty;
-			this.olvRMAs.HighlightForegroundColor = System.Drawing.Color.Empty;
+			this.olvRMAs.SelectedBackColor = System.Drawing.Color.Empty;
+			this.olvRMAs.SelectedForeColor = System.Drawing.Color.Empty;
 			this.olvRMAs.Location = new System.Drawing.Point(0, 30);
 			this.olvRMAs.MultiSelect = false;
 			this.olvRMAs.Name = "olvRMAs";

@@ -427,8 +427,8 @@
 			this.olvSecondary.FullRowSelect = true;
 			this.olvSecondary.GridLines = true;
 			this.olvSecondary.HideSelection = false;
-			this.olvSecondary.HighlightBackgroundColor = System.Drawing.Color.Empty;
-			this.olvSecondary.HighlightForegroundColor = System.Drawing.Color.Empty;
+			this.olvSecondary.SelectedBackColor = System.Drawing.Color.Empty;
+			this.olvSecondary.SelectedForeColor = System.Drawing.Color.Empty;
 			this.olvSecondary.Location = new System.Drawing.Point(12, 282);
 			this.olvSecondary.Name = "olvSecondary";
 			this.olvSecondary.ShowFilterMenuOnRightClick = false;
@@ -454,8 +454,8 @@
 			this.olvPrimary.FullRowSelect = true;
 			this.olvPrimary.GridLines = true;
 			this.olvPrimary.HideSelection = false;
-			this.olvPrimary.HighlightBackgroundColor = System.Drawing.Color.Empty;
-			this.olvPrimary.HighlightForegroundColor = System.Drawing.Color.Empty;
+			this.olvPrimary.SelectedBackColor = System.Drawing.Color.Empty;
+			this.olvPrimary.SelectedForeColor = System.Drawing.Color.Empty;
 			this.olvPrimary.Location = new System.Drawing.Point(12, 56);
 			this.olvPrimary.Name = "olvPrimary";
 			this.olvPrimary.ShowFilterMenuOnRightClick = false;

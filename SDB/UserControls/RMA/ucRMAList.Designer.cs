@@ -185,7 +185,7 @@
 			// 
 			// RmaList
 			// 
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.olvRmas);
 			this.Controls.Add(this.pnlRMA_Control);
 			this.Name = "RmaList";

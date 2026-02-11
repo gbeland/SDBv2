@@ -51,7 +51,7 @@ namespace SDB.UserControls.Tech
 		/// </summary>
 		public event TechEvent TechLoaded;
 		public event TechEvent CreateShipment;
-		public event RMAEvent ViewLegacyRMA;
+
 		public event RMAEvent ViewRMA;
 		public event ShipmentEvent ViewShipment;
 		public event TrackingEvent ViewTracking;

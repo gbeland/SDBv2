@@ -236,7 +236,7 @@
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabTickets;
         private System.Windows.Forms.TabPage tabAsset;
-        private MagicInfo.UserControls.ucAssetMagicInfo assetLFD1;
+
         private MagicInfo.UserControls.ucTicketMagicInfo ticketLFD1;
         private MagicInfo.UserControls.ucAssetMagicInfo ucAssetMagicInfo1;
         private System.Windows.Forms.TabPage tabPage2;

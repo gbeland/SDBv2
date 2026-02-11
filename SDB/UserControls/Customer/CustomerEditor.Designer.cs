@@ -1251,7 +1251,7 @@ namespace SDB.UserControls.Customer
             // 
             // CustomerEditor
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlMarketInfo);
             this.Controls.Add(this.pnlControl_Bottom);
             this.Controls.Add(this.pnlControl_Top);

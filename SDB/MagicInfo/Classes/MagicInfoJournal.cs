@@ -8,7 +8,7 @@ namespace SDB.MagicInfo.Classes
 {
     class MagicInfoJournal
     {
-        public List<MagicInfoJournalEntry> JournalEntries;
+        public List<MagicInfoJournalEntry> JournalEntries = new List<MagicInfoJournalEntry>();
 
         
 

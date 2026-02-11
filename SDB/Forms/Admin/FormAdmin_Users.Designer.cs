@@ -553,7 +553,7 @@ namespace SDB.Forms.Admin
             // 
             // FormAdmin_Users
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(398, 547);
             this.Controls.Add(this.pnlUser_Create);

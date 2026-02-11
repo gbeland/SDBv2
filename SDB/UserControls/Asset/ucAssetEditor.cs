@@ -77,7 +77,7 @@ namespace SDB.UserControls.Asset
 		public event AssetEvent OpenURL_WebVNC;
 		public event AssetEvent CreateShipment;
 		public event AssetIDEvent AssetClicked;
-		public event RMAClickedEvent ViewLegacyRMA;
+
 		public event RMAClickedEvent ViewRMA;
 		public event ShipmentEvent ViewShipment;
 		public event UpdateEvent AssetUpdated;

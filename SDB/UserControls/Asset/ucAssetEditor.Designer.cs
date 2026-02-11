@@ -3897,7 +3897,7 @@ namespace SDB.UserControls.Asset
 			// 
 			// AssetEditor
 			// 
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.Controls.Add(this.tabPhysGeo);
 			this.Controls.Add(this.pnlOwnershipInformation);

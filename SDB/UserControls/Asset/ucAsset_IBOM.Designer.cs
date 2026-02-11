@@ -467,7 +467,7 @@ namespace SDB.UserControls.Asset
 			// 
 			// ucAsset_IBOM
 			// 
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.pnlIBOM);
 			this.Name = "ucAsset_IBOM";
 			this.Size = new System.Drawing.Size(620, 280);

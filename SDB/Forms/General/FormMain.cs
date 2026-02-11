@@ -34,6 +34,9 @@ using SDB.UserControls.Wiki;
 using SDB.Forms.Eparts;
 using System.Deployment;
 
+using SDB.Interfaces;
+
+
 namespace SDB.Forms.General
 {
 	public sealed partial class FormMain : Form
@@ -66,16 +69,28 @@ namespace SDB.Forms.General
 
 		private const int _GOTO_MAX_RECENT_ITEMS = 10;
 		private const int _MAX_FAILED_LOGIN_ATTEMPTS = 3;
-		private int _loginAttmpts;
+
 		private readonly List<ToolStripMenuItem> _recentTickets = new List<ToolStripMenuItem>();
 		private readonly List<ToolStripMenuItem> _recentAssets = new List<ToolStripMenuItem>();
 		private readonly List<ToolStripMenuItem> _recentTechs = new List<ToolStripMenuItem>();
 		private bool _trackerNeedsRefresh;
+
+        private readonly AuthenticationService _authService;
+        private readonly ISettingsService _settingsService;
 		#endregion globals
 
 		#region Main Form
-		public FormMain()
+        
+        // Default constructor for Designer/Legacy support
+        public FormMain() : this(new SettingsService())
+        {
+        }
+
+        // Injection constructor
+		public FormMain(ISettingsService settingsService)
 		{
+            _settingsService = settingsService;
+            _authService = new AuthenticationService(_settingsService); // Composition Root for now
 			InitializeComponent();
 			// Text += " " + Version();
 			Text += " " + Application.ProductVersion;
@@ -90,6 +105,28 @@ namespace SDB.Forms.General
 			{
 				Location = GS.Settings.WindowLocation;
 				Size = GS.Settings.WindowSize;
+
+                // Ensure window is visible on screen
+                var formRectangle = new Rectangle(Location, Size);
+                var isVisible = false;
+                foreach (var screen in Screen.AllScreens)
+                {
+                    if (screen.WorkingArea.IntersectsWith(formRectangle))
+                    {
+                        isVisible = true;
+                        break;
+                    }
+                }
+
+                if (!isVisible)
+                {
+                    Size = new Size(1087, 781);
+                    var primaryScreen = Screen.PrimaryScreen;
+                    Location = new Point(
+                        primaryScreen.WorkingArea.X + (primaryScreen.WorkingArea.Width - Size.Width) / 2,
+                        primaryScreen.WorkingArea.Y + (primaryScreen.WorkingArea.Height - Size.Height) / 2
+                    );
+                }
 			}
 
 			//using (var frm = new FormUpdateCheck())
@@ -335,11 +372,12 @@ namespace SDB.Forms.General
 		#region Login / Connection
 		private void btnLogin_Click(object sender, EventArgs e)
 		{
-			if (_loginAttmpts >= _MAX_FAILED_LOGIN_ATTEMPTS)
+			if (_authService.IsLockedOut)
 			{
 				ClassLogFile.AppendToLog("Multiple login failures, exiting.");
 				_forceClose = true;
 				Close();
+                return;
 			}
 
 			if (!int.TryParse(txtLogin_UserID.Text.Trim(), out var userID))
@@ -348,35 +386,24 @@ namespace SDB.Forms.General
 				return;
 			}
 
-			try
-			{
-				var candidateUser = ClassUser.GetByID(userID);
-				var password = txtLogin_Password.Text;
-				if (!CheckLoginCredentials(candidateUser, password, out var message))
-				{
-					ClassLogFile.AppendToLog(string.Format("Login failed for user ID {0}", userID));
-					MessageBox.Show(message, "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					txtLogin_Password.SelectAll();
-					_loginAttmpts++;
-					return;
-				}
-				GrantLogin(candidateUser);
-				SetupUIForLogOn();
+            var password = txtLogin_Password.Text;
+            var user = _authService.AttemptLogin(userID, password, out var message);
 
-				if (message != "Temporary password used.")
-					return;
+            if (user == null)
+            {
+                MessageBox.Show(message, "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtLogin_Password.SelectAll();
+                return;
+            }
 
-				ClassLogFile.AppendToLog("Temporary password used.");
+            SetupUIForLogOn();
 
-				using (var frmUserDetails = new FormAdmin_User_Details(password))
-					frmUserDetails.ShowDialog(this);
-			}
-			catch (Exception exc)
-			{
-				ClassLogFile.AppendToLog("Exception during login: " + exc.Message);
-				var message = string.Format("An error occurred during login. The database may be unavailable, incompatible, or settings are incorrect.{0}{0}{1}", Environment.NewLine, exc.Message);
-				MessageBox.Show(message, "Login Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
+            if (message == "Temporary password used.")
+            {
+                ClassLogFile.AppendToLog("Temporary password used.");
+                using (var frmUserDetails = new FormAdmin_User_Details(password))
+                    frmUserDetails.ShowDialog(this);
+            }
 		}
 
 		private void txtLogin_Password_TextChanged(object sender, EventArgs e)
@@ -415,76 +442,7 @@ namespace SDB.Forms.General
 			ClassEventLog.AddEntry(userID, ClassEventLog.EventTypeEnum.RequestPwReset, ClassEventLog.ObjectTypeEnum.User, userID, string.Empty);
 		}
 
-		/// <summary>
-		/// Validates login credentials; returns true if valid.
-		/// </summary>
-		/// <param name="candidateUser">The user requesting login.</param>
-		/// <param name="password">The user's password which will be hashed and tested against stored password.</param>
-		/// <param name="message">A message indicating status if authentication fails.</param>
-		private bool CheckLoginCredentials(ClassUser candidateUser, string password, out string message)
-		{
-			const string STANDARD_ERROR = "Login failed. Check your login and password and try again.";
 
-			if (candidateUser == null)
-			{
-				message = STANDARD_ERROR;
-				return false;
-			}
-
-			if (candidateUser.LoginDisabled)
-			{
-				ClassLogFile.AppendToLog($"Login failed for disabled account {candidateUser.ID}");
-				message = "Account disabled. Consult supervisor/administrator.";
-				return false;
-			}
-
-			try
-			{
-				if (candidateUser.GetForceLogout())
-				{
-					ClassLogFile.AppendToLog($"Login failed for forced logout user ID {candidateUser.ID}");
-					message = "Logins have been temporarily disabled. Consult supervisor/administrator.";
-					return false;
-				}
-				if (ClassUser.VerifyPassword(candidateUser.ID, password))
-				{
-					message = string.Empty;
-					return true;
-				}
-				if (ClassUser.VerifyTemporaryPassword(candidateUser.ID, password, TimeSpan.FromHours(ClassUser.TEMPORARY_PASSWORD_VALID_FOR_HOURS)))
-				{
-					message = "Temporary password used.";
-					return true;
-				}
-
-				ClassLogFile.AppendToLog($"Login failed for user ID {candidateUser.ID}");
-				message = STANDARD_ERROR;
-				return false;
-			}
-			catch (MySqlException exc)
-			{
-				ClassLogFile.AppendToLog("Error during login:", exc);
-				message = string.Format("A database error has occurred. Ensure you are using the latest version.{0}{0}{1}", Environment.NewLine, exc.Message);
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// Logs in the specified user, hides the login form, and initializes the application according to that users preferences.
-		/// </summary>
-		private void GrantLogin(ClassUser user)
-		{
-			if (user == null)
-				return;
-
-			_loginAttmpts = 0;
-			var now = ClassDatabase.GetCurrentTime();
-			GS.Settings.LoggedOnUser = user;
-			GS.Settings.LoggedOnUser.LoggedIn = now;
-			GS.Settings.LoggedOnUser.LastInteraction = now;
-			ClassUser.SetLoggedIn(GS.Settings.LoggedOnUser.ID);
-			ClassLogFile.AppendToLog($"User {user.ID} logged on.");
-		}
 
 		/// <summary>
 		/// Logs off the currently logged-in user and clears controls.
@@ -540,16 +498,7 @@ namespace SDB.Forms.General
 
 			// Clear controls and log out user
 			ClearControls();
-			ClassLogFile.AppendToLog($"User {GS.Settings.LoggedOnUser.ID} logged off.");
-			try
-			{
-				ClassEventLog.AddEntry(GS.Settings.LoggedOnUser.ID, ClassEventLog.EventTypeEnum.LogOff, ClassEventLog.ObjectTypeEnum.User, GS.Settings.LoggedOnUser.ID, string.Empty);
-				ClassUser.SetLoggedOut(GS.Settings.LoggedOnUser.ID);
-			}
-			catch (Exception exc)
-			{
-				ClassLogFile.AppendToLog("Error logging out: " + exc.Message);
-			}
+            _authService.Logout();
 
 			GS.Settings.LoggedOnUser = null;
 
@@ -2512,7 +2461,7 @@ namespace SDB.Forms.General
 		{
 			if (asset == null)
 				return;
-			Process.Start($"{GS.Settings.DashboardWebURL}{asset.AssetName}");
+			Process.Start($"{GS.Settings.DashboardWebURL}{asset.ID}");
 
             //using(FormWebPage wp = new FormWebPage())
             //{

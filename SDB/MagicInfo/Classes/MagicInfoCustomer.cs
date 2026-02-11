@@ -19,7 +19,7 @@ namespace SDB.MagicInfo.Classes
         #endregion
 
         #region  Private Properties
-        private readonly string _tableName = "magicinfo_customer";
+
         #endregion
 
         #region Init

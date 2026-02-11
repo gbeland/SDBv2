@@ -172,7 +172,7 @@
             // 
             // MiniWarrantyStatus
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.lblExtra);
             this.Controls.Add(this.lblCreative_c);

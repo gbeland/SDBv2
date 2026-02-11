@@ -66,8 +66,8 @@
 			this.olvSymptoms.FullRowSelect = true;
 			this.olvSymptoms.GridLines = true;
 			this.olvSymptoms.HideSelection = false;
-			this.olvSymptoms.HighlightBackgroundColor = System.Drawing.Color.Empty;
-			this.olvSymptoms.HighlightForegroundColor = System.Drawing.Color.Empty;
+			this.olvSymptoms.SelectedBackColor = System.Drawing.Color.Empty;
+			this.olvSymptoms.SelectedForeColor = System.Drawing.Color.Empty;
 			this.olvSymptoms.Location = new System.Drawing.Point(0, 30);
 			this.olvSymptoms.MultiSelect = false;
 			this.olvSymptoms.Name = "olvSymptoms";

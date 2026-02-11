@@ -135,8 +135,8 @@
 			this.olvNotifications.EmptyListMsg = "No Notifications";
 			this.olvNotifications.GridLines = true;
 			this.olvNotifications.HasCollapsibleGroups = false;
-			this.olvNotifications.HighlightBackgroundColor = System.Drawing.Color.Empty;
-			this.olvNotifications.HighlightForegroundColor = System.Drawing.Color.Empty;
+			this.olvNotifications.SelectedBackColor = System.Drawing.Color.Empty;
+			this.olvNotifications.SelectedForeColor = System.Drawing.Color.Empty;
 			this.olvNotifications.Location = new System.Drawing.Point(3, 33);
 			this.olvNotifications.MultiSelect = false;
 			this.olvNotifications.Name = "olvNotifications";
@@ -263,8 +263,8 @@
 			this.olvSubscriptions.EmptyListMsg = "No Subscriptions";
 			this.olvSubscriptions.GridLines = true;
 			this.olvSubscriptions.HasCollapsibleGroups = false;
-			this.olvSubscriptions.HighlightBackgroundColor = System.Drawing.Color.Empty;
-			this.olvSubscriptions.HighlightForegroundColor = System.Drawing.Color.Empty;
+			this.olvSubscriptions.SelectedBackColor = System.Drawing.Color.Empty;
+			this.olvSubscriptions.SelectedForeColor = System.Drawing.Color.Empty;
 			this.olvSubscriptions.Location = new System.Drawing.Point(3, 33);
 			this.olvSubscriptions.MultiSelect = false;
 			this.olvSubscriptions.Name = "olvSubscriptions";

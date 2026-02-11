@@ -204,7 +204,7 @@
 			// 
 			// ucShipmentList
 			// 
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.olvShipments);
 			this.Controls.Add(this.pnlShipments_Control);
 			this.Name = "ucShipmentList";

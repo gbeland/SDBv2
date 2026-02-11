@@ -2,6 +2,7 @@ using System;
 using System.Threading;
 using System.Windows.Forms;
 using SDB.Forms.General;
+using SDB.Classes.General;
 
 namespace SDB
 {
@@ -24,12 +25,15 @@ namespace SDB
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
+            // Composition Root
+            var settingsService = new SettingsService();
+
 #if DEBUG
-			Application.Run(new FormMain());
+			Application.Run(new FormMain(settingsService));
 #else
 			try
 			{
-				Application.Run(new FormMain());
+				Application.Run(new FormMain(settingsService));
 			}
 			catch (Exception exc)
 			{

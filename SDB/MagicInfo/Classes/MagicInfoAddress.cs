@@ -23,7 +23,7 @@ namespace SDB.MagicInfo.Classes
 
         #region  Private Properties
 
-        private readonly string _tableName = "magicinfo_address";
+
 
         #endregion
 

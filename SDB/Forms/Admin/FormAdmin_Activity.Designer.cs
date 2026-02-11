@@ -109,8 +109,8 @@
 			this.olvLoggedIn.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.olvLoggedIn.FullRowSelect = true;
 			this.olvLoggedIn.GridLines = true;
-			this.olvLoggedIn.HighlightBackgroundColor = System.Drawing.Color.Empty;
-			this.olvLoggedIn.HighlightForegroundColor = System.Drawing.Color.Empty;
+			this.olvLoggedIn.SelectedBackColor = System.Drawing.Color.Empty;
+			this.olvLoggedIn.SelectedForeColor = System.Drawing.Color.Empty;
 			this.olvLoggedIn.Location = new System.Drawing.Point(0, 30);
 			this.olvLoggedIn.MultiSelect = false;
 			this.olvLoggedIn.Name = "olvLoggedIn";
@@ -229,8 +229,8 @@
 			this.olvRMARepairs.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.olvRMARepairs.FullRowSelect = true;
 			this.olvRMARepairs.GridLines = true;
-			this.olvRMARepairs.HighlightBackgroundColor = System.Drawing.Color.Empty;
-			this.olvRMARepairs.HighlightForegroundColor = System.Drawing.Color.Empty;
+			this.olvRMARepairs.SelectedBackColor = System.Drawing.Color.Empty;
+			this.olvRMARepairs.SelectedForeColor = System.Drawing.Color.Empty;
 			this.olvRMARepairs.Location = new System.Drawing.Point(0, 30);
 			this.olvRMARepairs.MultiSelect = false;
 			this.olvRMARepairs.Name = "olvRMARepairs";

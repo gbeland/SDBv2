@@ -72,8 +72,8 @@
 			this.olvFiles.FullRowSelect = true;
 			this.olvFiles.GridLines = true;
 			this.olvFiles.HasCollapsibleGroups = false;
-			this.olvFiles.HighlightBackgroundColor = System.Drawing.Color.Empty;
-			this.olvFiles.HighlightForegroundColor = System.Drawing.Color.Empty;
+			this.olvFiles.SelectedBackColor = System.Drawing.Color.Empty;
+			this.olvFiles.SelectedForeColor = System.Drawing.Color.Empty;
 			this.olvFiles.Location = new System.Drawing.Point(0, 30);
 			this.olvFiles.Name = "olvFiles";
 			this.olvFiles.RowHeight = 60;
@@ -161,7 +161,7 @@
 			// 
 			// ucFileManager
 			// 
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.pnlFiles);
 			this.Name = "ucFileManager";
 			this.Size = new System.Drawing.Size(620, 300);

@@ -77,7 +77,7 @@ namespace SDB.UserControls.Ticket
 		public event AssetEvent LaunchDashboard;
 		public event AssetEvent LaunchVNC;
 		public event AssetEvent LaunchTeamviewer;
-		public event RMAEvent ViewLegacyRMA;
+
 		public event RMAEvent ViewRMA;
 		public event ShipmentEvent ViewShipment;
 		public event TrackingEvent ViewTracking;

@@ -170,7 +170,7 @@ namespace SDB.Forms.Asset
 			// FormAsset_ServiceReminder
 			// 
 			this.AcceptButton = this.btnSave;
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.btnCancel;
 			this.ClientSize = new System.Drawing.Size(443, 276);
 			this.Controls.Add(this.lblServiceReminderInfo);

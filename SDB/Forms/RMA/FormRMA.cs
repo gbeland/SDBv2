@@ -13,7 +13,7 @@ namespace SDB.Forms.RMA
 {
     public partial class FormRMA : Form
     {
-        ClassRMA _selectedRMA;
+
         List<ClassRMA> _listRMA;
         public FormRMA()
         {
@@ -24,10 +24,7 @@ namespace SDB.Forms.RMA
         public void Populate()
         {
             //Populate RMA info tab
-            if(_selectedRMA != null)
-            {
 
-            }
 
             //Populate RMA list Tab
             

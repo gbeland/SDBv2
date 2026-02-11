@@ -16,7 +16,7 @@ namespace SDB.MagicInfo.UserControls
     {
         MagicInfoServer _server;
         MagicInfoAsset _asset;
-        MagicInfoMarket _market;
+
         MagicInfoCustomer _customer;
         public MagicInfoTicket _ticket;
         

@@ -366,7 +366,7 @@ namespace SDB.Forms.Admin
 
         #region Cabinet Types
 
-        private EditAddMode _cabinetTypeEditMode;
+
         private ClassCabinetType _selectedCabinetType;
         private List<ClassCabinetType> _cabinetTypes = new List<ClassCabinetType>();
 
@@ -507,7 +507,7 @@ namespace SDB.Forms.Admin
 
         private void AddCabinetType()
         {
-            _cabinetTypeEditMode = EditAddMode.Add;
+
             ClearCabinetTypeEditor();
             ShowCabinetTypeEditor(true);
         }

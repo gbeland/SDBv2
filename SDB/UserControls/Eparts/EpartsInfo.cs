@@ -23,7 +23,7 @@ namespace SDB.UserControls.Eparts
         SDB.Classes.Eparts.Eparts LoadedEpartsOrder;
         public delegate void IDEvent(int jumpID);
         public event IDEvent ViewShipment;
-        public event IDEvent ViewMarket;
+
 
         public EpartsInfo()
         {

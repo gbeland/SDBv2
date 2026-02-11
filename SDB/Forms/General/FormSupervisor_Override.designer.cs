@@ -112,7 +112,7 @@
 			// FormSupervisor_Override
 			// 
 			this.AcceptButton = this.btnPermit;
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.btnCancel;
 			this.ClientSize = new System.Drawing.Size(442, 236);
 			this.ControlBox = false;

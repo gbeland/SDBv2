@@ -55,7 +55,7 @@
 			// 
 			// ucGeneralNotes
 			// 
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.pnlGeneralNotes);
 			this.Controls.Add(this.btnAdd);
 			this.DoubleBuffered = true;

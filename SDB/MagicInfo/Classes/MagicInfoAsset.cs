@@ -28,7 +28,7 @@ namespace SDB.MagicInfo.Classes
         public int? Market_ID { get; set; }
         public int? Server_ID { get; set; }
 
-        private readonly string _tableName = "magicinfo_asset";
+
 
         #region Init
         public MagicInfoAsset()

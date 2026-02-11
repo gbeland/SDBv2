@@ -196,7 +196,7 @@
 			// 
 			// TicketRentals
 			// 
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.olvRentals);
 			this.Controls.Add(this.pnlControl);
 			this.Name = "TicketRentals";

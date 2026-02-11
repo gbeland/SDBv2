@@ -1432,6 +1432,7 @@ namespace SDB.Forms.General
 			this.statusStrip.PerformLayout();
 			this.pnlLogin.ResumeLayout(false);
 			this.pnlLogin.PerformLayout();
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

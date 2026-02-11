@@ -16,7 +16,7 @@ namespace SDB.Forms.Eparts
 
         public delegate void IDEvent(int jumpID);
         public event IDEvent ViewShipment;
-        public event IDEvent ViewMarket;
+
 
         public List<Classes.Eparts.Eparts> LoadedEparts;
         public int loadedPage = 0;
