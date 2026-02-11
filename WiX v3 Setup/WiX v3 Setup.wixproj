@@ -6,7 +6,7 @@
     <ProductVersion>3.10</ProductVersion>
     <ProjectGuid>b7f2a860-3c89-44d4-af3c-a142c76a19c8</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>Setup SDB</OutputName>
+    <OutputName>Setup SDBv2</OutputName>
     <OutputType>Package</OutputType>
     <SccProjectName>SAK</SccProjectName>
     <SccProvider>SAK</SccProvider>
