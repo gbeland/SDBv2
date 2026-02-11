@@ -196,5 +196,31 @@ namespace SDB.Classes.General
 			}
 			return serverTime;
 		}
+
+        /// <summary>
+        /// Attempts to connect to the database and returns true if successful.
+        /// Catches and logs any exceptions.
+        /// </summary>
+        public static bool TestConnection()
+        {
+            try
+            {
+                using (MySqlConnection conn = CreateMySqlConnection())
+                {
+                    conn.Open();
+                    conn.Close();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    ClassLogFile.AppendToLog("Database Connection Test Failed: " + ex.ToString());
+                }
+                catch { /* Ignore logging failure */ }
+                return false;
+            }
+        }
 	}
 }

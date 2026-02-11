@@ -1,25 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1684
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{85A83F10-CB12-4C11-9E5D-AA7B56B27CE7}"
 	ProjectSection(SolutionItems) = preProject
 		ChangeLog.txt = ChangeLog.txt
-		Notes.txt = Notes.txt
-		SQLChangeLog.txt = SQLChangeLog.txt
+		MakeInnoInstallerForRelease.iss = MakeInnoInstallerForRelease.iss
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDB", "SDB\SDB.csproj", "{720893B6-4C7A-47E9-B3A6-EB49478E57D8}"
-	ProjectSection(ProjectDependencies) = postProject
-		{62AFF36F-3ECD-430F-8594-D6138ED3AB35} = {62AFF36F-3ECD-430F-8594-D6138ED3AB35}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restart", "Restart\Restart.csproj", "{62AFF36F-3ECD-430F-8594-D6138ED3AB35}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curator", "Curator\Curator.csproj", "{1A512FA7-2D75-4162-9AFD-AB751C03AD8C}"
-EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "WiX v3 Setup", "WiX v3 Setup\WiX v3 Setup.wixproj", "{B7F2A860-3C89-44D4-AF3C-A142C76A19C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,35 +27,9 @@ Global
 		{720893B6-4C7A-47E9-B3A6-EB49478E57D8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{720893B6-4C7A-47E9-B3A6-EB49478E57D8}.Release|x86.ActiveCfg = Release|Any CPU
 		{720893B6-4C7A-47E9-B3A6-EB49478E57D8}.Release|x86.Build.0 = Release|Any CPU
-		{62AFF36F-3ECD-430F-8594-D6138ED3AB35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62AFF36F-3ECD-430F-8594-D6138ED3AB35}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62AFF36F-3ECD-430F-8594-D6138ED3AB35}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{62AFF36F-3ECD-430F-8594-D6138ED3AB35}.Debug|x86.Build.0 = Debug|Any CPU
-		{62AFF36F-3ECD-430F-8594-D6138ED3AB35}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62AFF36F-3ECD-430F-8594-D6138ED3AB35}.Release|Any CPU.Build.0 = Release|Any CPU
-		{62AFF36F-3ECD-430F-8594-D6138ED3AB35}.Release|x86.ActiveCfg = Release|Any CPU
-		{62AFF36F-3ECD-430F-8594-D6138ED3AB35}.Release|x86.Build.0 = Release|Any CPU
-		{1A512FA7-2D75-4162-9AFD-AB751C03AD8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A512FA7-2D75-4162-9AFD-AB751C03AD8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A512FA7-2D75-4162-9AFD-AB751C03AD8C}.Debug|x86.ActiveCfg = Debug|x86
-		{1A512FA7-2D75-4162-9AFD-AB751C03AD8C}.Debug|x86.Build.0 = Debug|x86
-		{1A512FA7-2D75-4162-9AFD-AB751C03AD8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A512FA7-2D75-4162-9AFD-AB751C03AD8C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A512FA7-2D75-4162-9AFD-AB751C03AD8C}.Release|x86.ActiveCfg = Release|x86
-		{1A512FA7-2D75-4162-9AFD-AB751C03AD8C}.Release|x86.Build.0 = Release|x86
-		{B7F2A860-3C89-44D4-AF3C-A142C76A19C8}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{B7F2A860-3C89-44D4-AF3C-A142C76A19C8}.Debug|x86.ActiveCfg = Debug|x86
-		{B7F2A860-3C89-44D4-AF3C-A142C76A19C8}.Debug|x86.Build.0 = Debug|x86
-		{B7F2A860-3C89-44D4-AF3C-A142C76A19C8}.Release|Any CPU.ActiveCfg = Release|x86
-		{B7F2A860-3C89-44D4-AF3C-A142C76A19C8}.Release|Any CPU.Build.0 = Release|x86
-		{B7F2A860-3C89-44D4-AF3C-A142C76A19C8}.Release|x86.ActiveCfg = Release|x86
-		{B7F2A860-3C89-44D4-AF3C-A142C76A19C8}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{62AFF36F-3ECD-430F-8594-D6138ED3AB35} = {85A83F10-CB12-4C11-9E5D-AA7B56B27CE7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {054A425F-9596-434F-BCDE-E7C039C2F0B7}

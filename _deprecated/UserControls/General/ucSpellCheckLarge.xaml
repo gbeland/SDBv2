@@ -1,8 +1,0 @@
-﻿<UserControl x:Class="SDB.UserControls.General.ucSpellCheckLarge"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Height="125" Width="355">
-    <Grid>
-        <RichTextBox Name="txtData" VerticalScrollBarVisibility="Auto" Margin="0" />
-    </Grid>
-</UserControl>

@@ -28,6 +28,17 @@ namespace SDB
             // Composition Root
             var settingsService = new SettingsService();
 
+            Classes.General.GS.LoadSettings();
+
+            using (var splash = new FormSplash())
+            {
+                Application.Run(splash);
+                if (splash.DialogResult == DialogResult.Abort)
+                {
+                    return;
+                }
+            }
+
 #if DEBUG
 			Application.Run(new FormMain(settingsService));
 #else

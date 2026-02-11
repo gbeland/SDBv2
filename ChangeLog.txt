@@ -1,5 +1,13 @@
 #####CHANGE LOG########
 
+2026-2-11 (26.2.11.1) [GB] So many changes....
+New installer. 
+Should fix scaling issues when Windows is set to anything other then 100% scale
+New installer
+Fixed Dashboard button
+
+
+
 2026-01-xx (1.11.0.1) Bug Fixes [EG][GB]
 
 SDB/Classes/General/ClassSettings.cs:154 - Changed DBServer hardcoded value to correct IP (105.1.17.191)
