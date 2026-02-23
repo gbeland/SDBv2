@@ -24,7 +24,7 @@ namespace SDB
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-
+			 
             // Composition Root
             var settingsService = new SettingsService(); 
 
