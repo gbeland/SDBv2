@@ -20,6 +20,14 @@ namespace SDB.Forms.General
             {
                 lblStatus.Text = "Connecting to database...";
 
+                // Ensure splash is centered on the primary monitor
+                this.StartPosition = FormStartPosition.Manual;
+                var screen = Screen.PrimaryScreen;
+                this.Location = new Point(
+                    screen.WorkingArea.X + (screen.WorkingArea.Width - this.Width) / 2,
+                    screen.WorkingArea.Y + (screen.WorkingArea.Height - this.Height) / 2
+                );
+
                 string logoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Required Files", "program_icon_gs_256x256.png");
                 if (File.Exists(logoPath))
                 {

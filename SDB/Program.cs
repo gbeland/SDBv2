@@ -26,7 +26,7 @@ namespace SDB
 			Application.SetCompatibleTextRenderingDefault(false);
 
             // Composition Root
-            var settingsService = new SettingsService();
+            var settingsService = new SettingsService(); 
 
             Classes.General.GS.LoadSettings();
 
